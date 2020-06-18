@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.PeoplePackageMapper">
+    <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.PeoplePackage">
+        <id column="ID" jdbcType="VARCHAR" property="id"/>
+        <result column="PID" jdbcType="VARCHAR" property="pid"/>
+        <result column="START_TIME" jdbcType="TIMESTAMP" property="startTime"/>
+        <result column="CREATE_ID" jdbcType="VARCHAR" property="createId"/>
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId"/>
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="CARE_ID" jdbcType="VARCHAR" property="careId"/>
+        <result column="REMARK1" jdbcType="VARCHAR" property="remark1"/>
+        <result column="REMARK2" jdbcType="VARCHAR" property="remark2"/>
+        <result column="REMARK3" jdbcType="VARCHAR" property="remark3"/>
+        <result column="REMARK4" jdbcType="VARCHAR" property="remark4"/>
+        <result column="REMARK5" jdbcType="VARCHAR" property="remark5"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    ID, PID, START_TIME, CREATE_ID, CREATE_TIME, UPDATE_ID, UPDATE_TIME, CARE_ID, REMARK1, 
+    REMARK2, REMARK3, REMARK4, REMARK5
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from PEOPLE_PACKAGE
+        where ID = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from PEOPLE_PACKAGE
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.cgr.lesson.entity.PeoplePackage">
+    insert into PEOPLE_PACKAGE (ID, PID, START_TIME, 
+      CREATE_ID, CREATE_TIME, UPDATE_ID, 
+      UPDATE_TIME, CARE_ID, REMARK1, 
+      REMARK2, REMARK3, REMARK4, 
+      REMARK5)
+    values (#{id,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{careId,jdbcType=VARCHAR}, #{remark1,jdbcType=VARCHAR}, 
+      #{remark2,jdbcType=VARCHAR}, #{remark3,jdbcType=VARCHAR}, #{remark4,jdbcType=VARCHAR}, 
+      #{remark5,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.cgr.lesson.entity.PeoplePackage">
+        insert into PEOPLE_PACKAGE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="pid != null">
+                PID,
+            </if>
+            <if test="startTime != null">
+                START_TIME,
+            </if>
+            <if test="createId != null">
+                CREATE_ID,
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME,
+            </if>
+            <if test="updateId != null">
+                UPDATE_ID,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="careId != null">
+                CARE_ID,
+            </if>
+            <if test="remark1 != null">
+                REMARK1,
+            </if>
+            <if test="remark2 != null">
+                REMARK2,
+            </if>
+            <if test="remark3 != null">
+                REMARK3,
+            </if>
+            <if test="remark4 != null">
+                REMARK4,
+            </if>
+            <if test="remark5 != null">
+                REMARK5,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="pid != null">
+                #{pid,jdbcType=VARCHAR},
+            </if>
+            <if test="startTime != null">
+                #{startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createId != null">
+                #{createId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateId != null">
+                #{updateId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="careId != null">
+                #{careId,jdbcType=VARCHAR},
+            </if>
+            <if test="remark1 != null">
+                #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                #{remark5,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.PeoplePackage">
+        update PEOPLE_PACKAGE
+        <set>
+            <if test="pid != null">
+                PID = #{pid,jdbcType=VARCHAR},
+            </if>
+            <if test="startTime != null">
+                START_TIME = #{startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createId != null">
+                CREATE_ID = #{createId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateId != null">
+                UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="careId != null">
+                CARE_ID = #{careId,jdbcType=VARCHAR},
+            </if>
+            <if test="remark1 != null">
+                REMARK1 = #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                REMARK2 = #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                REMARK3 = #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                REMARK4 = #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                REMARK5 = #{remark5,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.PeoplePackage">
+    update PEOPLE_PACKAGE
+    set PID = #{pid,jdbcType=VARCHAR},
+      START_TIME = #{startTime,jdbcType=TIMESTAMP},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      CARE_ID = #{careId,jdbcType=VARCHAR},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR},
+      REMARK4 = #{remark4,jdbcType=VARCHAR},
+      REMARK5 = #{remark5,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+    <!--分页查询套餐生成信息-->
+    <select id="selectAllPackage" parameterType="com.cgr.lesson.vo.req.PeoplePackagePageReqVO"
+            resultType="com.cgr.lesson.vo.resp.PeoplePackageResqVO">
+        select a.id,a.name,a.people_id as peopleid,case when a.sex=1 then '男' when a.sex=2 then '女' else '未知' end as
+        sex,
+        a.id_card as idcard,a.phone, (case when b.assess_result=0 then '能力完好'
+        when b.assess_result=1 then '轻度受损'
+        when b.assess_result=2 then '中度受损'
+        when b.assess_result=3 then '重度受损' end) as assessresult,
+        c.id as careid,d.care_name as carename
+        from people_baseinfo a
+        left join people_assess b on b.pid=a.id
+        left join people_package c on c.pid=a.id
+        left join caresetting d on c.care_id=d.id
+        <where>
+            a.deleted=1
+            and b.deleted=1
+            and a.remark1 is null
+            <if test="name!=null and name!=''">
+                and a.name like '%'||#{name}||'%'
+            </if>
+            <if test="idCard!=null and idCard!=''">
+                and a.id_card like '%'||#{idCard}||'%'
+            </if>
+            <if test="startTime!=null and startTime!=''">
+                and a.create_time &gt;=to_date(startTime,'yyyy-MM-dd hh24:mi:ss')
+            </if>
+            <if test="endTime!=null and endTime!=''">
+                and a.create_time &lt;=to_date(endTime,'yyyy-MM-dd hh24:mi:ss')
+            </if>
+
+        </where>
+    </select>
+
+    <!--根据个人ID查询套餐-->
+    <select id="selectByPid" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"></include>
+        from people_package
+        where pid=#{pid}
+    </select>
+
+</mapper>

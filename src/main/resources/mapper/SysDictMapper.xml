@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.SysDictMapper">
+  <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.SysDict">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="TYPEID" jdbcType="VARCHAR" property="typeid" />
+    <result column="TYPENAME" jdbcType="VARCHAR" property="typename" />
+    <result column="DICTID" jdbcType="VARCHAR" property="dictid" />
+    <result column="DICTNAME" jdbcType="VARCHAR" property="dictname" />
+    <result column="DELETED" jdbcType="DECIMAL" property="deleted" />
+    <result column="CREATETIME" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, TYPEID, TYPENAME, DICTID, DICTNAME, DELETED, CREATETIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_DICT
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from SYS_DICT
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cgr.lesson.entity.SysDict">
+    insert into SYS_DICT (ID, TYPEID, TYPENAME, 
+      DICTID, DICTNAME, DELETED, 
+      CREATETIME)
+    values (#{id,jdbcType=VARCHAR}, #{typeid,jdbcType=VARCHAR}, #{typename,jdbcType=VARCHAR}, 
+      #{dictid,jdbcType=VARCHAR}, #{dictname,jdbcType=VARCHAR}, #{deleted,jdbcType=DECIMAL}, 
+      #{createtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cgr.lesson.entity.SysDict">
+    insert into SYS_DICT
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="typeid != null">
+        TYPEID,
+      </if>
+      <if test="typename != null">
+        TYPENAME,
+      </if>
+      <if test="dictid != null">
+        DICTID,
+      </if>
+      <if test="dictname != null">
+        DICTNAME,
+      </if>
+      <if test="deleted != null">
+        DELETED,
+      </if>
+      <if test="createtime != null">
+        CREATETIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="typeid != null">
+        #{typeid,jdbcType=VARCHAR},
+      </if>
+      <if test="typename != null">
+        #{typename,jdbcType=VARCHAR},
+      </if>
+      <if test="dictid != null">
+        #{dictid,jdbcType=VARCHAR},
+      </if>
+      <if test="dictname != null">
+        #{dictname,jdbcType=VARCHAR},
+      </if>
+      <if test="deleted != null">
+        #{deleted,jdbcType=DECIMAL},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.SysDict">
+    update SYS_DICT
+    <set>
+      <if test="typeid != null">
+        TYPEID = #{typeid,jdbcType=VARCHAR},
+      </if>
+      <if test="typename != null">
+        TYPENAME = #{typename,jdbcType=VARCHAR},
+      </if>
+      <if test="dictid != null">
+        DICTID = #{dictid,jdbcType=VARCHAR},
+      </if>
+      <if test="dictname != null">
+        DICTNAME = #{dictname,jdbcType=VARCHAR},
+      </if>
+      <if test="deleted != null">
+        DELETED = #{deleted,jdbcType=DECIMAL},
+      </if>
+      <if test="createtime != null">
+        CREATETIME = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.SysDict">
+    update SYS_DICT
+    set TYPEID = #{typeid,jdbcType=VARCHAR},
+      TYPENAME = #{typename,jdbcType=VARCHAR},
+      DICTID = #{dictid,jdbcType=VARCHAR},
+      DICTNAME = #{dictname,jdbcType=VARCHAR},
+      DELETED = #{deleted,jdbcType=DECIMAL},
+      CREATETIME = #{createtime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <!--  查询数据字典-->
+  <select id="selectDict" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from sys_dict
+    where typeid=#{typeid}
+    and deleted=1
+    order by dictid
+  </select>
+
+  <!--查询所有的数字字典  -->
+  <select id="selectAll" resultMap="BaseResultMap">
+     select <include refid="Base_Column_List"></include>
+     from sys_dict
+     <where>
+       deleted=1
+       <if test="typename!=null and typename!=''">
+         and typename like '%'||#{typename}||'%'
+       </if>
+     </where>
+
+  </select>
+
+
+
+</mapper>

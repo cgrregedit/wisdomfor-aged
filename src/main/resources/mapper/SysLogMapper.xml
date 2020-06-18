@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.SysLogMapper">
+  <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.SysLog">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="OPERATION" jdbcType="VARCHAR" property="operation" />
+    <result column="TIME" jdbcType="DECIMAL" property="time" />
+    <result column="METHOD" jdbcType="VARCHAR" property="method" />
+    <result column="PARAMS" jdbcType="VARCHAR" property="params" />
+    <result column="IP" jdbcType="VARCHAR" property="ip" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, USER_ID, USERNAME, OPERATION, TIME, METHOD, PARAMS, IP, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_LOG
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from SYS_LOG
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cgr.lesson.entity.SysLog">
+    insert into SYS_LOG (ID, USER_ID, USERNAME, 
+      OPERATION, TIME, METHOD, 
+      PARAMS, IP, CREATE_TIME
+      )
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{operation,jdbcType=VARCHAR}, #{time,jdbcType=DECIMAL}, #{method,jdbcType=VARCHAR}, 
+      #{params,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cgr.lesson.entity.SysLog">
+    insert into SYS_LOG
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="operation != null">
+        OPERATION,
+      </if>
+      <if test="time != null">
+        TIME,
+      </if>
+      <if test="method != null">
+        METHOD,
+      </if>
+      <if test="params != null">
+        PARAMS,
+      </if>
+      <if test="ip != null">
+        IP,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="operation != null">
+        #{operation,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=DECIMAL},
+      </if>
+      <if test="method != null">
+        #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="params != null">
+        #{params,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.SysLog">
+    update SYS_LOG
+    <set>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="operation != null">
+        OPERATION = #{operation,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        TIME = #{time,jdbcType=DECIMAL},
+      </if>
+      <if test="method != null">
+        METHOD = #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="params != null">
+        PARAMS = #{params,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        IP = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.SysLog">
+    update SYS_LOG
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      USERNAME = #{username,jdbcType=VARCHAR},
+      OPERATION = #{operation,jdbcType=VARCHAR},
+      TIME = #{time,jdbcType=DECIMAL},
+      METHOD = #{method,jdbcType=VARCHAR},
+      PARAMS = #{params,jdbcType=VARCHAR},
+      IP = #{ip,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+<!--分页查询日志-->
+  <select id="selectAll" resultMap="BaseResultMap" parameterType="com.cgr.lesson.vo.req.SysLogPageReqVO">
+    select <include refid="Base_Column_List"></include>
+    from sys_log
+    <where>
+      <if test="username !=null and username !=''">
+        and username like '%'||#{username}||'%'
+      </if>
+      <if test="userId !=null and userId !=''">
+        and user_id=#{userId}
+      </if>
+      <if test="operation !=null and operation !=''">
+        and operation like '%'||#{operation}||'%'
+      </if>
+      <if test="startTime !=null and startTime !=''">
+        and create_time >=to_date(#{startTime},'yyyy-MM-dd hh24:mi:ss')
+      </if>
+      <if test="endTime !=null and endTime !=''">
+        and create_time &lt;=to_date(#{endTime},'yyyy-MM-dd hh24:mi:ss')
+      </if>
+    </where>
+  </select>
+
+<!--  批量删除日志-->
+  <delete id="batchDeletedLog">
+    delete from sys_log
+    where id in
+    <foreach collection="list" item="item" separator="," open="(" close=")">
+      #{item}
+    </foreach>
+  </delete>
+</mapper>

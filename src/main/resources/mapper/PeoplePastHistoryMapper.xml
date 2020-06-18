@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.PeoplePastHistoryMapper">
+  <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.PeoplePastHistory">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PID" jdbcType="VARCHAR" property="pid" />
+    <result column="DISEASE_HISTORY" jdbcType="DECIMAL" property="diseaseHistory" />
+    <result column="OPERATION_HISTORY" jdbcType="DECIMAL" property="operationHistory" />
+    <result column="TRAUMA_HISTORY" jdbcType="DECIMAL" property="traumaHistory" />
+    <result column="BUNKO_HISTORY" jdbcType="DECIMAL" property="bunkoHistory" />
+    <result column="FATHER_DISEASE" jdbcType="DECIMAL" property="fatherDisease" />
+    <result column="MONTHER_DISEASE" jdbcType="DECIMAL" property="montherDisease" />
+    <result column="BROTHER_DISEASE" jdbcType="DECIMAL" property="brotherDisease" />
+    <result column="CHILDREN_DISEASE" jdbcType="DECIMAL" property="childrenDisease" />
+    <result column="HEREDITY_DISEASE" jdbcType="DECIMAL" property="heredityDisease" />
+    <result column="DISABILITY" jdbcType="DECIMAL" property="disability" />
+    <result column="DISABILITY_TEXT" jdbcType="VARCHAR" property="disabilityText" />
+    <result column="DISABILITY_NUM" jdbcType="VARCHAR" property="disabilityNum" />
+    <result column="DISABILITY_GRADE" jdbcType="DECIMAL" property="disabilityGrade" />
+    <result column="CREATE_ID" jdbcType="VARCHAR" property="createId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="REMARK1" jdbcType="VARCHAR" property="remark1" />
+    <result column="REMARK2" jdbcType="VARCHAR" property="remark2" />
+    <result column="REMARK3" jdbcType="VARCHAR" property="remark3" />
+    <result column="REMARK4" jdbcType="VARCHAR" property="remark4" />
+    <result column="deleted" jdbcType="DECIMAL" property="deleted" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, PID, DISEASE_HISTORY, OPERATION_HISTORY, TRAUMA_HISTORY, BUNKO_HISTORY, FATHER_DISEASE, 
+    MONTHER_DISEASE, BROTHER_DISEASE, CHILDREN_DISEASE, HEREDITY_DISEASE, DISABILITY, 
+    DISABILITY_TEXT, DISABILITY_NUM, DISABILITY_GRADE, CREATE_ID, CREATE_TIME, UPDATE_ID, 
+    UPDATE_TIME, REMARK1, REMARK2, REMARK3, REMARK4, deleted
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from PEOPLE_PASTHISTORY
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from PEOPLE_PASTHISTORY
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cgr.lesson.entity.PeoplePastHistory">
+    insert into PEOPLE_PASTHISTORY (ID, PID, DISEASE_HISTORY, 
+      OPERATION_HISTORY, TRAUMA_HISTORY, BUNKO_HISTORY, 
+      FATHER_DISEASE, MONTHER_DISEASE, BROTHER_DISEASE, 
+      CHILDREN_DISEASE, HEREDITY_DISEASE, DISABILITY, 
+      DISABILITY_TEXT, DISABILITY_NUM, DISABILITY_GRADE, 
+      CREATE_ID, CREATE_TIME, UPDATE_ID, 
+      UPDATE_TIME, REMARK1, REMARK2, 
+      REMARK3, REMARK4, deleted
+      )
+    values (#{id,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, #{diseaseHistory,jdbcType=DECIMAL}, 
+      #{operationHistory,jdbcType=DECIMAL}, #{traumaHistory,jdbcType=DECIMAL}, #{bunkoHistory,jdbcType=DECIMAL}, 
+      #{fatherDisease,jdbcType=DECIMAL}, #{montherDisease,jdbcType=DECIMAL}, #{brotherDisease,jdbcType=DECIMAL}, 
+      #{childrenDisease,jdbcType=DECIMAL}, #{heredityDisease,jdbcType=DECIMAL}, #{disability,jdbcType=DECIMAL}, 
+      #{disabilityText,jdbcType=VARCHAR}, #{disabilityNum,jdbcType=VARCHAR}, #{disabilityGrade,jdbcType=DECIMAL}, 
+      #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, 
+      #{remark3,jdbcType=VARCHAR}, #{remark4,jdbcType=VARCHAR}, #{deleted,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cgr.lesson.entity.PeoplePastHistory">
+    insert into PEOPLE_PASTHISTORY
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="pid != null">
+        PID,
+      </if>
+      <if test="diseaseHistory != null">
+        DISEASE_HISTORY,
+      </if>
+      <if test="operationHistory != null">
+        OPERATION_HISTORY,
+      </if>
+      <if test="traumaHistory != null">
+        TRAUMA_HISTORY,
+      </if>
+      <if test="bunkoHistory != null">
+        BUNKO_HISTORY,
+      </if>
+      <if test="fatherDisease != null">
+        FATHER_DISEASE,
+      </if>
+      <if test="montherDisease != null">
+        MONTHER_DISEASE,
+      </if>
+      <if test="brotherDisease != null">
+        BROTHER_DISEASE,
+      </if>
+      <if test="childrenDisease != null">
+        CHILDREN_DISEASE,
+      </if>
+      <if test="heredityDisease != null">
+        HEREDITY_DISEASE,
+      </if>
+      <if test="disability != null">
+        DISABILITY,
+      </if>
+      <if test="disabilityText != null">
+        DISABILITY_TEXT,
+      </if>
+      <if test="disabilityNum != null">
+        DISABILITY_NUM,
+      </if>
+      <if test="disabilityGrade != null">
+        DISABILITY_GRADE,
+      </if>
+      <if test="createId != null">
+        CREATE_ID,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateId != null">
+        UPDATE_ID,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="remark1 != null">
+        REMARK1,
+      </if>
+      <if test="remark2 != null">
+        REMARK2,
+      </if>
+      <if test="remark3 != null">
+        REMARK3,
+      </if>
+      <if test="remark4 != null">
+        REMARK4,
+      </if>
+      <if test="deleted != null">
+        deleted,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="diseaseHistory != null">
+        #{diseaseHistory,jdbcType=DECIMAL},
+      </if>
+      <if test="operationHistory != null">
+        #{operationHistory,jdbcType=DECIMAL},
+      </if>
+      <if test="traumaHistory != null">
+        #{traumaHistory,jdbcType=DECIMAL},
+      </if>
+      <if test="bunkoHistory != null">
+        #{bunkoHistory,jdbcType=DECIMAL},
+      </if>
+      <if test="fatherDisease != null">
+        #{fatherDisease,jdbcType=DECIMAL},
+      </if>
+      <if test="montherDisease != null">
+        #{montherDisease,jdbcType=DECIMAL},
+      </if>
+      <if test="brotherDisease != null">
+        #{brotherDisease,jdbcType=DECIMAL},
+      </if>
+      <if test="childrenDisease != null">
+        #{childrenDisease,jdbcType=DECIMAL},
+      </if>
+      <if test="heredityDisease != null">
+        #{heredityDisease,jdbcType=DECIMAL},
+      </if>
+      <if test="disability != null">
+        #{disability,jdbcType=DECIMAL},
+      </if>
+      <if test="disabilityText != null">
+        #{disabilityText,jdbcType=VARCHAR},
+      </if>
+      <if test="disabilityNum != null">
+        #{disabilityNum,jdbcType=VARCHAR},
+      </if>
+      <if test="disabilityGrade != null">
+        #{disabilityGrade,jdbcType=DECIMAL},
+      </if>
+      <if test="createId != null">
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark1 != null">
+        #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null">
+        #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null">
+        #{remark3,jdbcType=VARCHAR},
+      </if>
+      <if test="remark4 != null">
+        #{remark4,jdbcType=VARCHAR},
+      </if>
+      <if test="deleted != null">
+        #{deleted,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.PeoplePastHistory">
+    update PEOPLE_PASTHISTORY
+    <set>
+      <if test="pid != null">
+        PID = #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="diseaseHistory != null">
+        DISEASE_HISTORY = #{diseaseHistory,jdbcType=DECIMAL},
+      </if>
+      <if test="operationHistory != null">
+        OPERATION_HISTORY = #{operationHistory,jdbcType=DECIMAL},
+      </if>
+      <if test="traumaHistory != null">
+        TRAUMA_HISTORY = #{traumaHistory,jdbcType=DECIMAL},
+      </if>
+      <if test="bunkoHistory != null">
+        BUNKO_HISTORY = #{bunkoHistory,jdbcType=DECIMAL},
+      </if>
+      <if test="fatherDisease != null">
+        FATHER_DISEASE = #{fatherDisease,jdbcType=DECIMAL},
+      </if>
+      <if test="montherDisease != null">
+        MONTHER_DISEASE = #{montherDisease,jdbcType=DECIMAL},
+      </if>
+      <if test="brotherDisease != null">
+        BROTHER_DISEASE = #{brotherDisease,jdbcType=DECIMAL},
+      </if>
+      <if test="childrenDisease != null">
+        CHILDREN_DISEASE = #{childrenDisease,jdbcType=DECIMAL},
+      </if>
+      <if test="heredityDisease != null">
+        HEREDITY_DISEASE = #{heredityDisease,jdbcType=DECIMAL},
+      </if>
+      <if test="disability != null">
+        DISABILITY = #{disability,jdbcType=DECIMAL},
+      </if>
+      <if test="disabilityText != null">
+        DISABILITY_TEXT = #{disabilityText,jdbcType=VARCHAR},
+      </if>
+      <if test="disabilityNum != null">
+        DISABILITY_NUM = #{disabilityNum,jdbcType=VARCHAR},
+      </if>
+      <if test="disabilityGrade != null">
+        DISABILITY_GRADE = #{disabilityGrade,jdbcType=DECIMAL},
+      </if>
+      <if test="createId != null">
+        CREATE_ID = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark1 != null">
+        REMARK1 = #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null">
+        REMARK2 = #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null">
+        REMARK3 = #{remark3,jdbcType=VARCHAR},
+      </if>
+      <if test="remark4 != null">
+        REMARK4 = #{remark4,jdbcType=VARCHAR},
+      </if>
+      <if test="deleted != null">
+        deleted = #{deleted,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.PeoplePastHistory">
+    update PEOPLE_PASTHISTORY
+    set PID = #{pid,jdbcType=VARCHAR},
+      DISEASE_HISTORY = #{diseaseHistory,jdbcType=DECIMAL},
+      OPERATION_HISTORY = #{operationHistory,jdbcType=DECIMAL},
+      TRAUMA_HISTORY = #{traumaHistory,jdbcType=DECIMAL},
+      BUNKO_HISTORY = #{bunkoHistory,jdbcType=DECIMAL},
+      FATHER_DISEASE = #{fatherDisease,jdbcType=DECIMAL},
+      MONTHER_DISEASE = #{montherDisease,jdbcType=DECIMAL},
+      BROTHER_DISEASE = #{brotherDisease,jdbcType=DECIMAL},
+      CHILDREN_DISEASE = #{childrenDisease,jdbcType=DECIMAL},
+      HEREDITY_DISEASE = #{heredityDisease,jdbcType=DECIMAL},
+      DISABILITY = #{disability,jdbcType=DECIMAL},
+      DISABILITY_TEXT = #{disabilityText,jdbcType=VARCHAR},
+      DISABILITY_NUM = #{disabilityNum,jdbcType=VARCHAR},
+      DISABILITY_GRADE = #{disabilityGrade,jdbcType=DECIMAL},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR},
+      REMARK4 = #{remark4,jdbcType=VARCHAR},
+      deleted = #{deleted,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <select id="getPastHistoryByPid" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from people_pasthistory
+    where deleted=1
+    and pid=#{pid}
+  </select>
+</mapper>

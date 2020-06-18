@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.PeopleAssessSecondMapper">
+  <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.PeopleAssessSecond">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PID" jdbcType="VARCHAR" property="pid" />
+    <result column="COGNITIVE" jdbcType="DECIMAL" property="cognitive" />
+    <result column="ATTACKS" jdbcType="DECIMAL" property="attacks" />
+    <result column="SYMPTOMS" jdbcType="DECIMAL" property="symptoms" />
+    <result column="TOTAL_SCORE" jdbcType="DECIMAL" property="totalScore" />
+    <result column="GRADE" jdbcType="DECIMAL" property="grade" />
+    <result column="DELETED" jdbcType="DECIMAL" property="deleted" />
+    <result column="CREATE_ID" jdbcType="VARCHAR" property="createId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="REMARK1" jdbcType="VARCHAR" property="remark1" />
+    <result column="REMARK2" jdbcType="VARCHAR" property="remark2" />
+    <result column="REMARK3" jdbcType="VARCHAR" property="remark3" />
+    <result column="REMARK4" jdbcType="VARCHAR" property="remark4" />
+    <result column="REMARK5" jdbcType="VARCHAR" property="remark5" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, PID, COGNITIVE, ATTACKS, SYMPTOMS, TOTAL_SCORE, GRADE, DELETED, CREATE_ID, CREATE_TIME, 
+    UPDATE_ID, UPDATE_TIME, REMARK1, REMARK2, REMARK3, REMARK4, REMARK5
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from PEOPLE_ASSESS_SECOND
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from PEOPLE_ASSESS_SECOND
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cgr.lesson.entity.PeopleAssessSecond">
+    insert into PEOPLE_ASSESS_SECOND (ID, PID, COGNITIVE, 
+      ATTACKS, SYMPTOMS, TOTAL_SCORE, 
+      GRADE, DELETED, CREATE_ID, 
+      CREATE_TIME, UPDATE_ID, UPDATE_TIME, 
+      REMARK1, REMARK2, REMARK3, 
+      REMARK4, REMARK5)
+    values (#{id,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, #{cognitive,jdbcType=DECIMAL}, 
+      #{attacks,jdbcType=DECIMAL}, #{symptoms,jdbcType=DECIMAL}, #{totalScore,jdbcType=DECIMAL}, 
+      #{grade,jdbcType=DECIMAL}, #{deleted,jdbcType=DECIMAL}, #{createId,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, #{remark3,jdbcType=VARCHAR}, 
+      #{remark4,jdbcType=VARCHAR}, #{remark5,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cgr.lesson.entity.PeopleAssessSecond">
+    insert into PEOPLE_ASSESS_SECOND
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="pid != null">
+        PID,
+      </if>
+      <if test="cognitive != null">
+        COGNITIVE,
+      </if>
+      <if test="attacks != null">
+        ATTACKS,
+      </if>
+      <if test="symptoms != null">
+        SYMPTOMS,
+      </if>
+      <if test="totalScore != null">
+        TOTAL_SCORE,
+      </if>
+      <if test="grade != null">
+        GRADE,
+      </if>
+      <if test="deleted != null">
+        DELETED,
+      </if>
+      <if test="createId != null">
+        CREATE_ID,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateId != null">
+        UPDATE_ID,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="remark1 != null">
+        REMARK1,
+      </if>
+      <if test="remark2 != null">
+        REMARK2,
+      </if>
+      <if test="remark3 != null">
+        REMARK3,
+      </if>
+      <if test="remark4 != null">
+        REMARK4,
+      </if>
+      <if test="remark5 != null">
+        REMARK5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="cognitive != null">
+        #{cognitive,jdbcType=DECIMAL},
+      </if>
+      <if test="attacks != null">
+        #{attacks,jdbcType=DECIMAL},
+      </if>
+      <if test="symptoms != null">
+        #{symptoms,jdbcType=DECIMAL},
+      </if>
+      <if test="totalScore != null">
+        #{totalScore,jdbcType=DECIMAL},
+      </if>
+      <if test="grade != null">
+        #{grade,jdbcType=DECIMAL},
+      </if>
+      <if test="deleted != null">
+        #{deleted,jdbcType=DECIMAL},
+      </if>
+      <if test="createId != null">
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark1 != null">
+        #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null">
+        #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null">
+        #{remark3,jdbcType=VARCHAR},
+      </if>
+      <if test="remark4 != null">
+        #{remark4,jdbcType=VARCHAR},
+      </if>
+      <if test="remark5 != null">
+        #{remark5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.PeopleAssessSecond">
+    update PEOPLE_ASSESS_SECOND
+    <set>
+      <if test="pid != null">
+        PID = #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="cognitive != null">
+        COGNITIVE = #{cognitive,jdbcType=DECIMAL},
+      </if>
+      <if test="attacks != null">
+        ATTACKS = #{attacks,jdbcType=DECIMAL},
+      </if>
+      <if test="symptoms != null">
+        SYMPTOMS = #{symptoms,jdbcType=DECIMAL},
+      </if>
+      <if test="totalScore != null">
+        TOTAL_SCORE = #{totalScore,jdbcType=DECIMAL},
+      </if>
+      <if test="grade != null">
+        GRADE = #{grade,jdbcType=DECIMAL},
+      </if>
+      <if test="deleted != null">
+        DELETED = #{deleted,jdbcType=DECIMAL},
+      </if>
+      <if test="createId != null">
+        CREATE_ID = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark1 != null">
+        REMARK1 = #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null">
+        REMARK2 = #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null">
+        REMARK3 = #{remark3,jdbcType=VARCHAR},
+      </if>
+      <if test="remark4 != null">
+        REMARK4 = #{remark4,jdbcType=VARCHAR},
+      </if>
+      <if test="remark5 != null">
+        REMARK5 = #{remark5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.PeopleAssessSecond">
+    update PEOPLE_ASSESS_SECOND
+    set PID = #{pid,jdbcType=VARCHAR},
+      COGNITIVE = #{cognitive,jdbcType=DECIMAL},
+      ATTACKS = #{attacks,jdbcType=DECIMAL},
+      SYMPTOMS = #{symptoms,jdbcType=DECIMAL},
+      TOTAL_SCORE = #{totalScore,jdbcType=DECIMAL},
+      GRADE = #{grade,jdbcType=DECIMAL},
+      DELETED = #{deleted,jdbcType=DECIMAL},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR},
+      REMARK4 = #{remark4,jdbcType=VARCHAR},
+      REMARK5 = #{remark5,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

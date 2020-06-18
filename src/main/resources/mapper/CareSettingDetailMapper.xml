@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.CareSettingDetailMapper">
+    <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.CareSettingDetail">
+        <id column="ID" jdbcType="VARCHAR" property="id"/>
+        <result column="PID" jdbcType="VARCHAR" property="pid"/>
+        <result column="TP_ID" jdbcType="VARCHAR" property="tpId"/>
+        <result column="TP_NAME" jdbcType="VARCHAR" property="tpName"/>
+        <result column="TP_TYPE" jdbcType="VARCHAR" property="tpType"/>
+        <result column="TASK_TYEP" jdbcType="VARCHAR" property="taskTyep"/>
+        <result column="FREQUENCY" jdbcType="VARCHAR" property="frequency"/>
+        <result column="EXEC_DATE" jdbcType="VARCHAR" property="execDate"/>
+        <result column="EXEC_TIME" jdbcType="VARCHAR" property="execTime"/>
+        <result column="CREATE_ID" jdbcType="VARCHAR" property="createId"/>
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId"/>
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="REMARK1" jdbcType="VARCHAR" property="remark1"/>
+        <result column="REMARK2" jdbcType="VARCHAR" property="remark2"/>
+        <result column="REMARK3" jdbcType="VARCHAR" property="remark3"/>
+        <result column="REMARK4" jdbcType="VARCHAR" property="remark4"/>
+        <result column="REMARK5" jdbcType="VARCHAR" property="remark5"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    ID, PID, TP_ID, TP_NAME, TP_TYPE, TASK_TYEP, FREQUENCY, EXEC_DATE, EXEC_TIME, CREATE_ID, 
+    CREATE_TIME, UPDATE_ID, UPDATE_TIME, REMARK1, REMARK2, REMARK3, REMARK4, REMARK5
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from CARESETTING_DETAIL
+        where ID = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CARESETTING_DETAIL
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.cgr.lesson.entity.CareSettingDetail">
+    insert into CARESETTING_DETAIL (ID, PID, TP_ID, 
+      TP_NAME, TP_TYPE, TASK_TYEP, 
+      FREQUENCY, EXEC_DATE, EXEC_TIME, 
+      CREATE_ID, CREATE_TIME, UPDATE_ID, 
+      UPDATE_TIME, REMARK1, REMARK2, 
+      REMARK3, REMARK4, REMARK5
+      )
+    values (#{id,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, #{tpId,jdbcType=VARCHAR}, 
+      #{tpName,jdbcType=VARCHAR}, #{tpType,jdbcType=VARCHAR}, #{taskTyep,jdbcType=VARCHAR}, 
+      #{frequency,jdbcType=VARCHAR}, #{execDate,jdbcType=VARCHAR}, #{execTime,jdbcType=VARCHAR}, 
+      #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, 
+      #{remark3,jdbcType=VARCHAR}, #{remark4,jdbcType=VARCHAR}, #{remark5,jdbcType=VARCHAR}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.cgr.lesson.entity.CareSettingDetail">
+        insert into CARESETTING_DETAIL
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="pid != null">
+                PID,
+            </if>
+            <if test="tpId != null">
+                TP_ID,
+            </if>
+            <if test="tpName != null">
+                TP_NAME,
+            </if>
+            <if test="tpType != null">
+                TP_TYPE,
+            </if>
+            <if test="taskTyep != null">
+                TASK_TYEP,
+            </if>
+            <if test="frequency != null">
+                FREQUENCY,
+            </if>
+            <if test="execDate != null">
+                EXEC_DATE,
+            </if>
+            <if test="execTime != null">
+                EXEC_TIME,
+            </if>
+            <if test="createId != null">
+                CREATE_ID,
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME,
+            </if>
+            <if test="updateId != null">
+                UPDATE_ID,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="remark1 != null">
+                REMARK1,
+            </if>
+            <if test="remark2 != null">
+                REMARK2,
+            </if>
+            <if test="remark3 != null">
+                REMARK3,
+            </if>
+            <if test="remark4 != null">
+                REMARK4,
+            </if>
+            <if test="remark5 != null">
+                REMARK5,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="pid != null">
+                #{pid,jdbcType=VARCHAR},
+            </if>
+            <if test="tpId != null">
+                #{tpId,jdbcType=VARCHAR},
+            </if>
+            <if test="tpName != null">
+                #{tpName,jdbcType=VARCHAR},
+            </if>
+            <if test="tpType != null">
+                #{tpType,jdbcType=VARCHAR},
+            </if>
+            <if test="taskTyep != null">
+                #{taskTyep,jdbcType=VARCHAR},
+            </if>
+            <if test="frequency != null">
+                #{frequency,jdbcType=VARCHAR},
+            </if>
+            <if test="execDate != null">
+                #{execDate,jdbcType=VARCHAR},
+            </if>
+            <if test="execTime != null">
+                #{execTime,jdbcType=VARCHAR},
+            </if>
+            <if test="createId != null">
+                #{createId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateId != null">
+                #{updateId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remark1 != null">
+                #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                #{remark5,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.CareSettingDetail">
+        update CARESETTING_DETAIL
+        <set>
+            <if test="pid != null">
+                PID = #{pid,jdbcType=VARCHAR},
+            </if>
+            <if test="tpId != null">
+                TP_ID = #{tpId,jdbcType=VARCHAR},
+            </if>
+            <if test="tpName != null">
+                TP_NAME = #{tpName,jdbcType=VARCHAR},
+            </if>
+            <if test="tpType != null">
+                TP_TYPE = #{tpType,jdbcType=VARCHAR},
+            </if>
+            <if test="taskTyep != null">
+                TASK_TYEP = #{taskTyep,jdbcType=VARCHAR},
+            </if>
+            <if test="frequency != null">
+                FREQUENCY = #{frequency,jdbcType=VARCHAR},
+            </if>
+            <if test="execDate != null">
+                EXEC_DATE = #{execDate,jdbcType=VARCHAR},
+            </if>
+            <if test="execTime != null">
+                EXEC_TIME = #{execTime,jdbcType=VARCHAR},
+            </if>
+            <if test="createId != null">
+                CREATE_ID = #{createId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateId != null">
+                UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remark1 != null">
+                REMARK1 = #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                REMARK2 = #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                REMARK3 = #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                REMARK4 = #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                REMARK5 = #{remark5,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.CareSettingDetail">
+    update CARESETTING_DETAIL
+    set PID = #{pid,jdbcType=VARCHAR},
+      TP_ID = #{tpId,jdbcType=VARCHAR},
+      TP_NAME = #{tpName,jdbcType=VARCHAR},
+      TP_TYPE = #{tpType,jdbcType=VARCHAR},
+      TASK_TYEP = #{taskTyep,jdbcType=VARCHAR},
+      FREQUENCY = #{frequency,jdbcType=VARCHAR},
+      EXEC_DATE = #{execDate,jdbcType=VARCHAR},
+      EXEC_TIME = #{execTime,jdbcType=VARCHAR},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR},
+      REMARK4 = #{remark4,jdbcType=VARCHAR},
+      REMARK5 = #{remark5,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+    <!--批量插入执行计划-->
+    <insert id="batchInsert" parameterType="com.cgr.lesson.entity.CareSettingDetail">
+        insert into caresetting_detail(
+        id,
+        pid,
+        tp_id,
+        tp_name,
+        tp_type,
+        task_tyep,
+        frequency,
+        exec_date,
+        exec_time,
+        create_id,
+        create_time
+        )
+        (
+        <foreach collection="list" item="item" separator="union all">
+            select
+            #{item.id},
+            #{item.pid},
+            #{item.tpId},
+            #{item.tpName},
+            #{item.tpType},
+            #{item.taskTyep},
+            #{item.frequency},
+            #{item.execDate},
+            #{item.execTime},
+            #{item.createId},
+            #{item.createTime}
+            from dual
+        </foreach>
+        )
+    </insert>
+
+    <!-- 批量删除执行计划 -->
+    <delete id="batchDelete" parameterType="java.lang.String">
+       delete from caresetting_detail where pid=#{pid}
+    </delete>
+
+    <!--根据名称获取执行计划-->
+    <select id="getCareSettingDetailByName" resultMap="BaseResultMap">
+        select a.* from caresetting_detail a
+        inner join caresetting b on a.pid=b.id
+        where b.deleted=1
+        and b.care_name=#{name}
+    </select>
+
+</mapper>

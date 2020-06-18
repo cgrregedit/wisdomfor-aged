@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.CareSettingMapper">
+    <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.CareSetting">
+        <id column="ID" jdbcType="VARCHAR" property="id"/>
+        <result column="CARE_NAME" jdbcType="VARCHAR" property="careName"/>
+        <result column="CARE_OBJ" jdbcType="VARCHAR" property="careObj"/>
+        <result column="CARE_COST" jdbcType="DECIMAL" property="careCost"/>
+        <result column="CARE_EXPLAIN" jdbcType="VARCHAR" property="careExplain"/>
+        <result column="DELETED" jdbcType="DECIMAL" property="deleted"/>
+        <result column="CREATE_ID" jdbcType="VARCHAR" property="createId"/>
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId"/>
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="REMARK1" jdbcType="VARCHAR" property="remark1"/>
+        <result column="REMARK2" jdbcType="VARCHAR" property="remark2"/>
+        <result column="REMARK3" jdbcType="VARCHAR" property="remark3"/>
+        <result column="REMARK4" jdbcType="VARCHAR" property="remark4"/>
+        <result column="REMARK5" jdbcType="VARCHAR" property="remark5"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    ID, CARE_NAME, CARE_OBJ, CARE_COST, CARE_EXPLAIN, DELETED, CREATE_ID, CREATE_TIME, 
+    UPDATE_ID, UPDATE_TIME, REMARK1, REMARK2, REMARK3, REMARK4, REMARK5
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from CARESETTING
+        where ID = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CARESETTING
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.cgr.lesson.entity.CareSetting">
+    insert into CARESETTING (ID, CARE_NAME, CARE_OBJ, 
+      CARE_COST, CARE_EXPLAIN, DELETED, 
+      CREATE_ID, CREATE_TIME, UPDATE_ID, 
+      UPDATE_TIME, REMARK1, REMARK2, 
+      REMARK3, REMARK4, REMARK5
+      )
+    values (#{id,jdbcType=VARCHAR}, #{careName,jdbcType=VARCHAR}, #{careObj,jdbcType=VARCHAR}, 
+      #{careCost,jdbcType=DECIMAL}, #{careExplain,jdbcType=VARCHAR}, #{deleted,jdbcType=DECIMAL}, 
+      #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, 
+      #{remark3,jdbcType=VARCHAR}, #{remark4,jdbcType=VARCHAR}, #{remark5,jdbcType=VARCHAR}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.cgr.lesson.entity.CareSetting">
+        insert into CARESETTING
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="careName != null">
+                CARE_NAME,
+            </if>
+            <if test="careObj != null">
+                CARE_OBJ,
+            </if>
+            <if test="careCost != null">
+                CARE_COST,
+            </if>
+            <if test="careExplain != null">
+                CARE_EXPLAIN,
+            </if>
+            <if test="deleted != null">
+                DELETED,
+            </if>
+            <if test="createId != null">
+                CREATE_ID,
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME,
+            </if>
+            <if test="updateId != null">
+                UPDATE_ID,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="remark1 != null">
+                REMARK1,
+            </if>
+            <if test="remark2 != null">
+                REMARK2,
+            </if>
+            <if test="remark3 != null">
+                REMARK3,
+            </if>
+            <if test="remark4 != null">
+                REMARK4,
+            </if>
+            <if test="remark5 != null">
+                REMARK5,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="careName != null">
+                #{careName,jdbcType=VARCHAR},
+            </if>
+            <if test="careObj != null">
+                #{careObj,jdbcType=VARCHAR},
+            </if>
+            <if test="careCost != null">
+                #{careCost,jdbcType=DECIMAL},
+            </if>
+            <if test="careExplain != null">
+                #{careExplain,jdbcType=VARCHAR},
+            </if>
+            <if test="deleted != null">
+                #{deleted,jdbcType=DECIMAL},
+            </if>
+            <if test="createId != null">
+                #{createId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateId != null">
+                #{updateId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remark1 != null">
+                #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                #{remark5,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.CareSetting">
+        update CARESETTING
+        <set>
+            <if test="careName != null">
+                CARE_NAME = #{careName,jdbcType=VARCHAR},
+            </if>
+            <if test="careObj != null">
+                CARE_OBJ = #{careObj,jdbcType=VARCHAR},
+            </if>
+            <if test="careCost != null">
+                CARE_COST = #{careCost,jdbcType=DECIMAL},
+            </if>
+            <if test="careExplain != null">
+                CARE_EXPLAIN = #{careExplain,jdbcType=VARCHAR},
+            </if>
+            <if test="deleted != null">
+                DELETED = #{deleted,jdbcType=DECIMAL},
+            </if>
+            <if test="createId != null">
+                CREATE_ID = #{createId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateId != null">
+                UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remark1 != null">
+                REMARK1 = #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                REMARK2 = #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                REMARK3 = #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                REMARK4 = #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                REMARK5 = #{remark5,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.CareSetting">
+    update CARESETTING
+    set CARE_NAME = #{careName,jdbcType=VARCHAR},
+      CARE_OBJ = #{careObj,jdbcType=VARCHAR},
+      CARE_COST = #{careCost,jdbcType=DECIMAL},
+      CARE_EXPLAIN = #{careExplain,jdbcType=VARCHAR},
+      DELETED = #{deleted,jdbcType=DECIMAL},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR},
+      REMARK4 = #{remark4,jdbcType=VARCHAR},
+      REMARK5 = #{remark5,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+    <select id="selectByFind" parameterType="com.cgr.lesson.vo.req.CareProReqVO"
+            resultType="com.cgr.lesson.vo.resp.CareProResqVO">
+        select a.tpid,a.tpname,b.dictname,a.unit,a.price,a.pycode,a.wbcode from bhis.pztreatproject a
+        left join bhis.tsDict b on a.projecttype=b.dictid and b.typeid='105'
+        <where>
+            a.organid='A10001'
+            <if test="findText!=null and findText!=''">
+                and (
+                a.tpid like '%'||#{findText}||'%'
+                or a.tpname like '%'||#{findText}||'%'
+                or a.pycode like '%'||#{findText}||'%'
+                or a.wbcode like '%'||#{findText}||'%'
+                )
+            </if>
+        </where>
+    </select>
+
+    <select id="selectAllName" resultType="java.lang.String">
+     select care_name from caresetting where deleted=1
+  </select>
+
+    <!--根据名称获取护理级别数据-->
+    <select id="getCareSettingByName" resultMap="BaseResultMap">
+      select <include refid="Base_Column_List"></include>
+      from caresetting
+      where deleted=1 and care_name=#{name}
+    </select>
+</mapper>

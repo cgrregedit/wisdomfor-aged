@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.PeopleAssessMapper">
+  <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.PeopleAssess">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PID" jdbcType="VARCHAR" property="pid" />
+    <result column="IDCARD" jdbcType="VARCHAR" property="idcard" />
+    <result column="START_TIME" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="ORNOT_ASSESS" jdbcType="DECIMAL" property="ornotAssess" />
+    <result column="ASSESS_RESULT" jdbcType="DECIMAL" property="assessResult" />
+    <result column="DELETED" jdbcType="DECIMAL" property="deleted" />
+    <result column="CREATE_ID" jdbcType="VARCHAR" property="createId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="REMARK1" jdbcType="VARCHAR" property="remark1" />
+    <result column="REMARK2" jdbcType="VARCHAR" property="remark2" />
+    <result column="REMARK3" jdbcType="VARCHAR" property="remark3" />
+    <result column="REMARK4" jdbcType="VARCHAR" property="remark4" />
+    <result column="REMARK5" jdbcType="VARCHAR" property="remark5" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, PID, IDCARD, START_TIME, ORNOT_ASSESS, ASSESS_RESULT, DELETED, CREATE_ID, CREATE_TIME, 
+    UPDATE_ID, UPDATE_TIME, REMARK1, REMARK2, REMARK3, REMARK4, REMARK5
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from PEOPLE_ASSESS
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from PEOPLE_ASSESS
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cgr.lesson.entity.PeopleAssess">
+    insert into PEOPLE_ASSESS (ID, PID, IDCARD, 
+      START_TIME, ORNOT_ASSESS, ASSESS_RESULT, 
+      DELETED, CREATE_ID, CREATE_TIME, 
+      UPDATE_ID, UPDATE_TIME, REMARK1, 
+      REMARK2, REMARK3, REMARK4, 
+      REMARK5)
+    values (#{id,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, #{idcard,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{ornotAssess,jdbcType=DECIMAL}, #{assessResult,jdbcType=DECIMAL}, 
+      #{deleted,jdbcType=DECIMAL}, #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{remark1,jdbcType=VARCHAR}, 
+      #{remark2,jdbcType=VARCHAR}, #{remark3,jdbcType=VARCHAR}, #{remark4,jdbcType=VARCHAR}, 
+      #{remark5,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cgr.lesson.entity.PeopleAssess">
+    insert into PEOPLE_ASSESS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="pid != null">
+        PID,
+      </if>
+      <if test="idcard != null">
+        IDCARD,
+      </if>
+      <if test="startTime != null">
+        START_TIME,
+      </if>
+      <if test="ornotAssess != null">
+        ORNOT_ASSESS,
+      </if>
+      <if test="assessResult != null">
+        ASSESS_RESULT,
+      </if>
+      <if test="deleted != null">
+        DELETED,
+      </if>
+      <if test="createId != null">
+        CREATE_ID,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateId != null">
+        UPDATE_ID,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="remark1 != null">
+        REMARK1,
+      </if>
+      <if test="remark2 != null">
+        REMARK2,
+      </if>
+      <if test="remark3 != null">
+        REMARK3,
+      </if>
+      <if test="remark4 != null">
+        REMARK4,
+      </if>
+      <if test="remark5 != null">
+        REMARK5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null">
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ornotAssess != null">
+        #{ornotAssess,jdbcType=DECIMAL},
+      </if>
+      <if test="assessResult != null">
+        #{assessResult,jdbcType=DECIMAL},
+      </if>
+      <if test="deleted != null">
+        #{deleted,jdbcType=DECIMAL},
+      </if>
+      <if test="createId != null">
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark1 != null">
+        #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null">
+        #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null">
+        #{remark3,jdbcType=VARCHAR},
+      </if>
+      <if test="remark4 != null">
+        #{remark4,jdbcType=VARCHAR},
+      </if>
+      <if test="remark5 != null">
+        #{remark5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.PeopleAssess">
+    update PEOPLE_ASSESS
+    <set>
+      <if test="pid != null">
+        PID = #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null">
+        IDCARD = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        START_TIME = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ornotAssess != null">
+        ORNOT_ASSESS = #{ornotAssess,jdbcType=DECIMAL},
+      </if>
+      <if test="assessResult != null">
+        ASSESS_RESULT = #{assessResult,jdbcType=DECIMAL},
+      </if>
+      <if test="deleted != null">
+        DELETED = #{deleted,jdbcType=DECIMAL},
+      </if>
+      <if test="createId != null">
+        CREATE_ID = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark1 != null">
+        REMARK1 = #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null">
+        REMARK2 = #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null">
+        REMARK3 = #{remark3,jdbcType=VARCHAR},
+      </if>
+      <if test="remark4 != null">
+        REMARK4 = #{remark4,jdbcType=VARCHAR},
+      </if>
+      <if test="remark5 != null">
+        REMARK5 = #{remark5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.PeopleAssess">
+    update PEOPLE_ASSESS
+    set PID = #{pid,jdbcType=VARCHAR},
+      IDCARD = #{idcard,jdbcType=VARCHAR},
+      START_TIME = #{startTime,jdbcType=TIMESTAMP},
+      ORNOT_ASSESS = #{ornotAssess,jdbcType=DECIMAL},
+      ASSESS_RESULT = #{assessResult,jdbcType=DECIMAL},
+      DELETED = #{deleted,jdbcType=DECIMAL},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR},
+      REMARK4 = #{remark4,jdbcType=VARCHAR},
+      REMARK5 = #{remark5,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <!-- 根据评估编号获取前4个评估等级 -->
+  <select id="getGradeByAssessId" resultType="com.cgr.lesson.vo.resp.PeopleAssessGradeRespVO">
+    select a.id,b.grade as firstgrade,c.grade as secondgrade, d.grade as threegrade,e.grade as fourgrade from people_assess a
+     left join people_assess_first b on a.id=b.pid
+     left join people_assess_second c on a.id=c.pid
+     left join people_assess_three d on a.id=d.pid
+     left join people_assess_four e on a.id=e.pid
+     where a.deleted=1 and a.id=#{assessId}
+  </select>
+
+  <!--//分页获取评估表信息  -->
+  <select id="pageInfo" parameterType="com.cgr.lesson.vo.req.PeopleAssessPageReqVO" resultType="com.cgr.lesson.vo.resp.PeopleAssessRespVO">
+     select a.id as id,p.name as name,(case when p.sex=1 then '男' when p.sex=2 then '女' else '未知性别' end) as sex,
+          p.id_card as idcard,p.people_id as peopleid,a.start_time as starttime,
+          (case when b.grade=0 then '能力完好'
+               when b.grade=1 then '轻度受损'
+               when b.grade=2 then '中度受损'
+               when b.grade=3 then '重度受损' end) as firstgrade,
+          (case when c.grade=0 then '能力完好'
+               when c.grade=1 then '轻度受损'
+               when c.grade=2 then '中度受损'
+               when c.grade=3 then '重度受损' end) as secondgrade,
+          (case when d.grade=0 then '能力完好'
+               when d.grade=1 then '轻度受损'
+               when d.grade=2 then '中度受损'
+               when d.grade=3 then '重度受损' end) as threegrade,
+          (case when e.grade=0 then '能力完好'
+               when e.grade=1 then '轻度受损'
+               when e.grade=2 then '中度受损'
+               when e.grade=3 then '重度受损' end) as fourgrade,
+          (case when a.ornot_assess=0 then '未完成' when a.ornot_assess=1 then '已完成' end) as ornot_assess,
+          a.assess_result as assess_result
+         from people_assess a
+         inner join people_baseinfo p on a.pid=p.id
+         left join people_assess_first b on a.id=b.pid
+         left join people_assess_second c on a.id=c.pid
+         left join people_assess_three d on a.id=d.pid
+         left join people_assess_four e on a.id=e.pid
+         left join people_assess_five f on a.id=f.pid
+         <where>
+           a.deleted=1
+           <if test="name!=null and name!=''">
+             and p.name like '%'||#{name}||'%'
+           </if>
+
+           <if test="idCard!=null and idCard!=''">
+              and p.id_card like '%'||#{idCard}||'%'
+           </if>
+
+           <if test="startTime!=null and startTime!=''">
+              and a.start_time &gt;=to_date(#{startTime},'yyyy-MM-dd hh24:mi:ss')
+           </if>
+
+           <if test="endTime!=null and endTime!=''">
+             and a.start_time &lt;=to_date(#{endTime},'yyyy-MM-dd hh24:mi:ss')
+           </if>
+
+         </where>
+
+  </select>
+</mapper>

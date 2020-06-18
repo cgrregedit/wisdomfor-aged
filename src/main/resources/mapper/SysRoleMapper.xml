@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.SysRoleMapper">
+<resultMap id="BaseResultMap" type="com.cgr.lesson.entity.SysRole">
+  <id column="ID" jdbcType="VARCHAR" property="id" />
+  <result column="NAME" jdbcType="VARCHAR" property="name" />
+  <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+  <result column="STATUS" jdbcType="DECIMAL" property="status" />
+  <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  <result column="DELETED" jdbcType="DECIMAL" property="deleted" />
+</resultMap>
+<sql id="Base_Column_List">
+    ID, NAME, DESCRIPTION, STATUS, CREATE_TIME, UPDATE_TIME, DELETED
+  </sql>
+<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  select
+  <include refid="Base_Column_List" />
+  from SYS_ROLE
+  where ID = #{id,jdbcType=VARCHAR}
+</select>
+<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from SYS_ROLE
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+<insert id="insert" parameterType="com.cgr.lesson.entity.SysRole">
+    insert into SYS_ROLE (ID, NAME, DESCRIPTION,
+      STATUS, CREATE_TIME, UPDATE_TIME,
+      DELETED)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
+      #{status,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
+      #{deleted,jdbcType=DECIMAL})
+  </insert>
+<insert id="insertSelective" parameterType="com.cgr.lesson.entity.SysRole">
+  insert into SYS_ROLE
+  <trim prefix="(" suffix=")" suffixOverrides=",">
+    <if test="id != null">
+      ID,
+    </if>
+    <if test="name != null">
+      NAME,
+    </if>
+    <if test="description != null">
+      DESCRIPTION,
+    </if>
+    <if test="status != null">
+      STATUS,
+    </if>
+    <if test="createTime != null">
+      CREATE_TIME,
+    </if>
+    <if test="updateTime != null">
+      UPDATE_TIME,
+    </if>
+    <if test="deleted != null">
+      DELETED,
+    </if>
+  </trim>
+  <trim prefix="values (" suffix=")" suffixOverrides=",">
+    <if test="id != null">
+      #{id,jdbcType=VARCHAR},
+    </if>
+    <if test="name != null">
+      #{name,jdbcType=VARCHAR},
+    </if>
+    <if test="description != null">
+      #{description,jdbcType=VARCHAR},
+    </if>
+    <if test="status != null">
+      #{status,jdbcType=DECIMAL},
+    </if>
+    <if test="createTime != null">
+      #{createTime,jdbcType=TIMESTAMP},
+    </if>
+    <if test="updateTime != null">
+      #{updateTime,jdbcType=TIMESTAMP},
+    </if>
+    <if test="deleted != null">
+      #{deleted,jdbcType=DECIMAL},
+    </if>
+  </trim>
+</insert>
+<update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.SysRole">
+  update SYS_ROLE
+  <set>
+    <if test="name != null">
+      NAME = #{name,jdbcType=VARCHAR},
+    </if>
+    <if test="description != null">
+      DESCRIPTION = #{description,jdbcType=VARCHAR},
+    </if>
+    <if test="status != null">
+      STATUS = #{status,jdbcType=DECIMAL},
+    </if>
+    <if test="createTime != null">
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+    </if>
+    <if test="updateTime != null">
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+    </if>
+    <if test="deleted != null">
+      DELETED = #{deleted,jdbcType=DECIMAL},
+    </if>
+  </set>
+  where ID = #{id,jdbcType=VARCHAR}
+</update>
+<update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.SysRole">
+    update SYS_ROLE
+    set NAME = #{name,jdbcType=VARCHAR},
+      DESCRIPTION = #{description,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      DELETED = #{deleted,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+<select id="selectAll" parameterType="com.cgr.lesson.vo.req.RolePageReqVO" resultType="com.cgr.lesson.entity.SysRole">
+  select <include refid="Base_Column_List"></include>
+  from sys_role
+  <where>
+    deleted=1
+    <if test="roleName!=null and roleName!=''">
+      AND name like '%'||#{roleName}||'%'
+    </if>
+    <if test="startTime!=null and startTime!=''">
+      AND create_time &gt;=to_date(#{startTime},'yyyy-MM-dd hh24:mi:ss')
+    </if>
+    <if test="endTime!=null and endTime!=''">
+      AND create_time &lt;=to_date(#{endTime},'yyyy-MM-dd hh24:mi:ss')
+    </if>
+  </where>
+</select>
+
+<!-- 遍历封装角色名称集合 -->
+  <select id="getRoleInfoByIds" resultMap="BaseResultMap">
+     select name from sys_role
+     where id in
+     <foreach collection="list" item="item" open="(" close=")" separator=",">
+        #{item}
+     </foreach>
+     and deleted=1
+  </select>
+</mapper>

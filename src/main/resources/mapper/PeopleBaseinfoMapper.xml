@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.PeopleBaseinfoMapper">
+    <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.PeopleBaseInfo">
+        <id column="ID" jdbcType="VARCHAR" property="id"/>
+        <result column="NAME" jdbcType="VARCHAR" property="name"/>
+        <result column="PEOPLE_ID" jdbcType="VARCHAR" property="peopleId"/>
+        <result column="SEX" jdbcType="DECIMAL" property="sex"/>
+        <result column="BIRTHDAY" jdbcType="TIMESTAMP" property="birthday"/>
+        <result column="ID_CARD" jdbcType="VARCHAR" property="idCard"/>
+        <result column="WORK_PLACE" jdbcType="VARCHAR" property="workPlace"/>
+        <result column="PHONE" jdbcType="VARCHAR" property="phone"/>
+        <result column="CONTACTS_NAME" jdbcType="VARCHAR" property="contactsName"/>
+        <result column="CONTACTS_PHONE" jdbcType="VARCHAR" property="contactsPhone"/>
+        <result column="RESIDENCE_TYPE" jdbcType="DECIMAL" property="residenceType"/>
+        <result column="NATION" jdbcType="VARCHAR" property="nation"/>
+        <result column="BLOOD" jdbcType="DECIMAL" property="blood"/>
+        <result column="BLOOD_RH" jdbcType="DECIMAL" property="bloodRh"/>
+        <result column="EDUCATION" jdbcType="DECIMAL" property="education"/>
+        <result column="PROFESSION" jdbcType="DECIMAL" property="profession"/>
+        <result column="MARITAL_STATUS" jdbcType="DECIMAL" property="maritalStatus"/>
+        <result column="PAY_TYPE" jdbcType="DECIMAL" property="payType"/>
+        <result column="PAY_TEXT" jdbcType="VARCHAR" property="payText"/>
+        <result column="ALLERGIC_HISTORY" jdbcType="DECIMAL" property="allergicHistory"/>
+        <result column="EXPOSURE_HISTORY" jdbcType="DECIMAL" property="exposureHistory"/>
+        <result column="MEDICAL_CARD" jdbcType="VARCHAR" property="medicalCard"/>
+        <result column="REMARK1" jdbcType="VARCHAR" property="remark1"/>
+        <result column="REMARK2" jdbcType="VARCHAR" property="remark2"/>
+        <result column="REMARK3" jdbcType="VARCHAR" property="remark3"/>
+        <result column="REMARK4" jdbcType="VARCHAR" property="remark4"/>
+        <result column="REMARK5" jdbcType="VARCHAR" property="remark5"/>
+        <result column="CREATE_ID" jdbcType="VARCHAR" property="createId"/>
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId"/>
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="DELETED" jdbcType="DECIMAL" property="deleted"/>
+        <result column="REMARK6" jdbcType="VARCHAR" property="remark6"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    ID, NAME, PEOPLE_ID, SEX, BIRTHDAY, ID_CARD, WORK_PLACE, PHONE, CONTACTS_NAME, 
+    CONTACTS_PHONE, RESIDENCE_TYPE, NATION, BLOOD, BLOOD_RH, EDUCATION, PROFESSION, MARITAL_STATUS, 
+    PAY_TYPE, PAY_TEXT, ALLERGIC_HISTORY, EXPOSURE_HISTORY, MEDICAL_CARD, REMARK1, REMARK2, 
+    REMARK3, REMARK4, REMARK5, CREATE_ID, CREATE_TIME, UPDATE_ID, UPDATE_TIME, DELETED, 
+    REMARK6
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from PEOPLE_BASEINFO
+        where ID = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from PEOPLE_BASEINFO
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.cgr.lesson.entity.PeopleBaseInfo">
+    insert into PEOPLE_BASEINFO (ID, NAME, PEOPLE_ID, 
+      SEX, BIRTHDAY, ID_CARD, 
+      WORK_PLACE, PHONE, CONTACTS_NAME, 
+      CONTACTS_PHONE, RESIDENCE_TYPE, NATION, 
+      BLOOD, BLOOD_RH, EDUCATION, 
+      PROFESSION, MARITAL_STATUS, PAY_TYPE, 
+      PAY_TEXT, ALLERGIC_HISTORY, EXPOSURE_HISTORY, 
+      MEDICAL_CARD, REMARK1, REMARK2, 
+      REMARK3, REMARK4, REMARK5, 
+      CREATE_ID, CREATE_TIME, UPDATE_ID, 
+      UPDATE_TIME, DELETED, REMARK6
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{peopleId,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=DECIMAL}, #{birthday,jdbcType=TIMESTAMP}, #{idCard,jdbcType=VARCHAR}, 
+      #{workPlace,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{contactsName,jdbcType=VARCHAR}, 
+      #{contactsPhone,jdbcType=VARCHAR}, #{residenceType,jdbcType=DECIMAL}, #{nation,jdbcType=VARCHAR}, 
+      #{blood,jdbcType=DECIMAL}, #{bloodRh,jdbcType=DECIMAL}, #{education,jdbcType=VARCHAR}, 
+      #{profession,jdbcType=DECIMAL}, #{maritalStatus,jdbcType=DECIMAL}, #{payType,jdbcType=DECIMAL}, 
+      #{payText,jdbcType=VARCHAR}, #{allergicHistory,jdbcType=DECIMAL}, #{exposureHistory,jdbcType=DECIMAL}, 
+      #{medicalCard,jdbcType=VARCHAR}, #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, 
+      #{remark3,jdbcType=VARCHAR}, #{remark4,jdbcType=VARCHAR}, #{remark5,jdbcType=VARCHAR}, 
+      #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=DECIMAL}, #{remark6,jdbcType=VARCHAR}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.cgr.lesson.entity.PeopleBaseInfo">
+        insert into PEOPLE_BASEINFO
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="name != null">
+                NAME,
+            </if>
+            <if test="peopleId != null">
+                PEOPLE_ID,
+            </if>
+            <if test="sex != null">
+                SEX,
+            </if>
+            <if test="birthday != null">
+                BIRTHDAY,
+            </if>
+            <if test="idCard != null">
+                ID_CARD,
+            </if>
+            <if test="workPlace != null">
+                WORK_PLACE,
+            </if>
+            <if test="phone != null">
+                PHONE,
+            </if>
+            <if test="contactsName != null">
+                CONTACTS_NAME,
+            </if>
+            <if test="contactsPhone != null">
+                CONTACTS_PHONE,
+            </if>
+            <if test="residenceType != null">
+                RESIDENCE_TYPE,
+            </if>
+            <if test="nation != null">
+                NATION,
+            </if>
+            <if test="blood != null">
+                BLOOD,
+            </if>
+            <if test="bloodRh != null">
+                BLOOD_RH,
+            </if>
+            <if test="education != null">
+                EDUCATION,
+            </if>
+            <if test="profession != null">
+                PROFESSION,
+            </if>
+            <if test="maritalStatus != null">
+                MARITAL_STATUS,
+            </if>
+            <if test="payType != null">
+                PAY_TYPE,
+            </if>
+            <if test="payText != null">
+                PAY_TEXT,
+            </if>
+            <if test="allergicHistory != null">
+                ALLERGIC_HISTORY,
+            </if>
+            <if test="exposureHistory != null">
+                EXPOSURE_HISTORY,
+            </if>
+            <if test="medicalCard != null">
+                MEDICAL_CARD,
+            </if>
+            <if test="remark1 != null">
+                REMARK1,
+            </if>
+            <if test="remark2 != null">
+                REMARK2,
+            </if>
+            <if test="remark3 != null">
+                REMARK3,
+            </if>
+            <if test="remark4 != null">
+                REMARK4,
+            </if>
+            <if test="remark5 != null">
+                REMARK5,
+            </if>
+            <if test="createId != null">
+                CREATE_ID,
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME,
+            </if>
+            <if test="updateId != null">
+                UPDATE_ID,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="deleted != null">
+                DELETED,
+            </if>
+            <if test="remark6 != null">
+                REMARK6,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="peopleId != null">
+                #{peopleId,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=DECIMAL},
+            </if>
+            <if test="birthday != null">
+                #{birthday,jdbcType=TIMESTAMP},
+            </if>
+            <if test="idCard != null">
+                #{idCard,jdbcType=VARCHAR},
+            </if>
+            <if test="workPlace != null">
+                #{workPlace,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="contactsName != null">
+                #{contactsName,jdbcType=VARCHAR},
+            </if>
+            <if test="contactsPhone != null">
+                #{contactsPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="residenceType != null">
+                #{residenceType,jdbcType=DECIMAL},
+            </if>
+            <if test="nation != null">
+                #{nation,jdbcType=VARCHAR},
+            </if>
+            <if test="blood != null">
+                #{blood,jdbcType=DECIMAL},
+            </if>
+            <if test="bloodRh != null">
+                #{bloodRh,jdbcType=DECIMAL},
+            </if>
+            <if test="education != null">
+                #{education,jdbcType=VARCHAR},
+            </if>
+            <if test="profession != null">
+                #{profession,jdbcType=DECIMAL},
+            </if>
+            <if test="maritalStatus != null">
+                #{maritalStatus,jdbcType=DECIMAL},
+            </if>
+            <if test="payType != null">
+                #{payType,jdbcType=DECIMAL},
+            </if>
+            <if test="payText != null">
+                #{payText,jdbcType=VARCHAR},
+            </if>
+            <if test="allergicHistory != null">
+                #{allergicHistory,jdbcType=DECIMAL},
+            </if>
+            <if test="exposureHistory != null">
+                #{exposureHistory,jdbcType=DECIMAL},
+            </if>
+            <if test="medicalCard != null">
+                #{medicalCard,jdbcType=VARCHAR},
+            </if>
+            <if test="remark1 != null">
+                #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                #{remark5,jdbcType=VARCHAR},
+            </if>
+            <if test="createId != null">
+                #{createId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateId != null">
+                #{updateId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="deleted != null">
+                #{deleted,jdbcType=DECIMAL},
+            </if>
+            <if test="remark6 != null">
+                #{remark6,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.PeopleBaseInfo">
+        update PEOPLE_BASEINFO
+        <set>
+            <if test="name != null">
+                NAME = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="peopleId != null">
+                PEOPLE_ID = #{peopleId,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                SEX = #{sex,jdbcType=DECIMAL},
+            </if>
+            <if test="birthday != null">
+                BIRTHDAY = #{birthday,jdbcType=TIMESTAMP},
+            </if>
+            <if test="idCard != null">
+                ID_CARD = #{idCard,jdbcType=VARCHAR},
+            </if>
+            <if test="workPlace != null">
+                WORK_PLACE = #{workPlace,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                PHONE = #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="contactsName != null">
+                CONTACTS_NAME = #{contactsName,jdbcType=VARCHAR},
+            </if>
+            <if test="contactsPhone != null">
+                CONTACTS_PHONE = #{contactsPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="residenceType != null">
+                RESIDENCE_TYPE = #{residenceType,jdbcType=DECIMAL},
+            </if>
+            <if test="nation != null">
+                NATION = #{nation,jdbcType=VARCHAR},
+            </if>
+            <if test="blood != null">
+                BLOOD = #{blood,jdbcType=DECIMAL},
+            </if>
+            <if test="bloodRh != null">
+                BLOOD_RH = #{bloodRh,jdbcType=DECIMAL},
+            </if>
+            <if test="education != null">
+                EDUCATION = #{education,jdbcType=VARCHAR},
+            </if>
+            <if test="profession != null">
+                PROFESSION = #{profession,jdbcType=DECIMAL},
+            </if>
+            <if test="maritalStatus != null">
+                MARITAL_STATUS = #{maritalStatus,jdbcType=DECIMAL},
+            </if>
+            <if test="payType != null">
+                PAY_TYPE = #{payType,jdbcType=DECIMAL},
+            </if>
+            <if test="payText != null">
+                PAY_TEXT = #{payText,jdbcType=VARCHAR},
+            </if>
+            <if test="allergicHistory != null">
+                ALLERGIC_HISTORY = #{allergicHistory,jdbcType=DECIMAL},
+            </if>
+            <if test="exposureHistory != null">
+                EXPOSURE_HISTORY = #{exposureHistory,jdbcType=DECIMAL},
+            </if>
+            <if test="medicalCard != null">
+                MEDICAL_CARD = #{medicalCard,jdbcType=VARCHAR},
+            </if>
+            <if test="remark1 != null">
+                REMARK1 = #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                REMARK2 = #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                REMARK3 = #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                REMARK4 = #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                REMARK5 = #{remark5,jdbcType=VARCHAR},
+            </if>
+            <if test="createId != null">
+                CREATE_ID = #{createId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateId != null">
+                UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="deleted != null">
+                DELETED = #{deleted,jdbcType=DECIMAL},
+            </if>
+            <if test="remark6 != null">
+                REMARK6 = #{remark6,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.PeopleBaseInfo">
+    update PEOPLE_BASEINFO
+    set NAME = #{name,jdbcType=VARCHAR},
+      PEOPLE_ID = #{peopleId,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=DECIMAL},
+      BIRTHDAY = #{birthday,jdbcType=TIMESTAMP},
+      ID_CARD = #{idCard,jdbcType=VARCHAR},
+      WORK_PLACE = #{workPlace,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      CONTACTS_NAME = #{contactsName,jdbcType=VARCHAR},
+      CONTACTS_PHONE = #{contactsPhone,jdbcType=VARCHAR},
+      RESIDENCE_TYPE = #{residenceType,jdbcType=DECIMAL},
+      NATION = #{nation,jdbcType=VARCHAR},
+      BLOOD = #{blood,jdbcType=DECIMAL},
+      BLOOD_RH = #{bloodRh,jdbcType=DECIMAL},
+      EDUCATION = #{education,jdbcType=VARCHAR},
+      PROFESSION = #{profession,jdbcType=DECIMAL},
+      MARITAL_STATUS = #{maritalStatus,jdbcType=DECIMAL},
+      PAY_TYPE = #{payType,jdbcType=DECIMAL},
+      PAY_TEXT = #{payText,jdbcType=VARCHAR},
+      ALLERGIC_HISTORY = #{allergicHistory,jdbcType=DECIMAL},
+      EXPOSURE_HISTORY = #{exposureHistory,jdbcType=DECIMAL},
+      MEDICAL_CARD = #{medicalCard,jdbcType=VARCHAR},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR},
+      REMARK4 = #{remark4,jdbcType=VARCHAR},
+      REMARK5 = #{remark5,jdbcType=VARCHAR},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      DELETED = #{deleted,jdbcType=DECIMAL},
+      REMARK6 = #{remark6,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+    <select id="selectAll" parameterType="com.cgr.lesson.vo.req.PeopleInfoPageReqVO"
+            resultType="com.cgr.lesson.vo.resp.PeopleInfoRespVO">
+     select a.id,a.name,a.people_id,case when a.sex=1 then '男'
+                                    when a.sex=2 then '女'
+                                    when a.sex=9 then '未说明的性别'
+                                    when a.sex=0 then '未知的性别'
+                                    else '未说明的性别' end as sex,
+       a.birthday,a.id_card,a.work_place,a.phone,a.contacts_name,a.contacts_phone,
+      d1.dictname as residence_name,a.nation,d2.dictname as blood_name,
+      d3.dictname as blood_rh_name,d4.dictname as education_name,
+      d5.dictname as profession_name,d6.dictname as  marital_status_name,
+      d7.dictname as pay_name,a.pay_text,d8.dictname as allergic_history_name,
+      d9.dictname as exposure_history_name,a.medical_card,
+      b.id as people_pasthistory_id,case when b.disease_history=1 then '无'
+                                   when b.disease_history=2 then '有'
+                                   else '无' end as disease_history_name,
+       case when b.operation_history=1 then '无'
+            when b.operation_history=2 then '有'
+            else '无' end as operation_history_name,
+        case when b.trauma_history=1 then '无'
+            when b.trauma_history=2 then '有'
+            else '无' end as trauma_history_name,
+       case when b.bunko_history=1 then '无'
+            when b.bunko_history=2 then '有'
+            else '无' end as bunko_history_name,
+       d10.dictname as father_disease_name,d11.dictname as monther_disease_name,
+       d12.dictname as brother_disease_name,d13.dictname as children_disease_name,
+       case when b.heredity_disease=1 then '无'
+            when b.heredity_disease=2 then '有'
+            else '无' end as heredity_disease_name,
+       d14.dictname as disability_name,b.disability_text,b.disability_num,
+       d15.dictname as disability_grade_name,
+       c.id as people_living_id,d16.dictname as kitchen_exhaust_name,
+       d17.dictname as fuel_type_name,
+       d18.dictname as water_name,d19.dictname as toilet_name,
+       d20.dictname as livestock_farm_name
+       from people_baseinfo a
+      left join sys_dict d1 on a.residence_type=d1.dictid and d1.typeid=2
+      left join sys_dict d2 on a.blood=d2.dictid and d2.typeid=1
+      left join sys_dict d3 on a.blood_rh=d3.dictid and d3.typeid=5
+      left join sys_dict d4 on a.education=d4.dictid and d4.typeid=4
+      left join sys_dict d5 on a.profession=d5.dictid and d5.typeid=3
+      left join sys_dict d6 on a.marital_status=d6.dictid and d6.typeid=6
+      left join sys_dict d7 on a.pay_type=d7.dictid and d7.typeid=7
+      left join sys_dict d8 on a.allergic_history=d8.dictid and d8.typeid=8
+      left join sys_dict d9 on a.exposure_history=d9.dictid and d9.typeid=9
+      left join people_pasthistory b on a.id=b.pid
+      left join sys_dict d10 on b.father_disease=d10.dictid and d10.typeid=10
+      left join sys_dict d11 on b.monther_disease=d11.dictid and d11.typeid=10
+      left join sys_dict d12 on b.brother_disease=d12.dictid and d12.typeid=10
+      left join sys_dict d13 on b.children_disease=d13.dictid and d13.typeid=10
+      left join sys_dict d14 on b.disability=d14.dictid and d14.typeid=11
+      left join sys_dict d15 on b.disability_grade=d15.dictid and d15.typeid=17
+      left join people_living c on a.id=c.pid
+      left join sys_dict d16 on c.kitchen_exhaust=d16.dictid and d16.typeid=12
+      left join sys_dict d17 on c.fuel_type=d17.dictid and d17.typeid=13
+      left join sys_dict d18 on c.water=d18.dictid and d18.typeid=14
+      left join sys_dict d19 on c.toilet=d19.dictid and d19.typeid=15
+      left join sys_dict d20 on c.livestock_farm=d20.dictid and d20.typeid=20
+      <where>
+          a.deleted=1
+          <if test="name!=null and name!=''">
+             and a.name like '%'||#{name}||'%'
+          </if>
+
+          <if test="idCard!=null and idCard!=''">
+             and a.id_card like '%'||#{idCard}||'%'
+          </if>
+
+          <if test="startTime!=null and startTime!=''">
+             and a.create_time &gt;=to_date(#{startTime},'yyyy-MM-dd hh24:mi:ss')
+          </if>
+
+          <if test="endTime!=null and endTime!=''">
+              and a.create_time &lt;=to_date(#{endTime},'yyyy-MM-dd hh24:mi:ss')
+          </if>
+
+      </where>
+
+  </select>
+</mapper>

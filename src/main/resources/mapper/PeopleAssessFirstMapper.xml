@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.PeopleAssessFirstMapper">
+  <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.PeopleAssessFirst">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PID" jdbcType="VARCHAR" property="pid" />
+    <result column="EATING" jdbcType="DECIMAL" property="eating" />
+    <result column="BATH" jdbcType="DECIMAL" property="bath" />
+    <result column="MODIFICATION" jdbcType="DECIMAL" property="modification" />
+    <result column="CLOTHING" jdbcType="DECIMAL" property="clothing" />
+    <result column="SHIT" jdbcType="DECIMAL" property="shit" />
+    <result column="URINATION" jdbcType="DECIMAL" property="urination" />
+    <result column="TOILET" jdbcType="DECIMAL" property="toilet" />
+    <result column="BED_TRANSFER" jdbcType="DECIMAL" property="bedTransfer" />
+    <result column="WALKING" jdbcType="DECIMAL" property="walking" />
+    <result column="STAIRS" jdbcType="DECIMAL" property="stairs" />
+    <result column="TOTAL_SCORE" jdbcType="DECIMAL" property="totalScore" />
+    <result column="GRADE" jdbcType="DECIMAL" property="grade" />
+    <result column="DELETED" jdbcType="DECIMAL" property="deleted" />
+    <result column="CREATE_ID" jdbcType="VARCHAR" property="createId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="REMARK1" jdbcType="VARCHAR" property="remark1" />
+    <result column="REMARK2" jdbcType="VARCHAR" property="remark2" />
+    <result column="REMARK3" jdbcType="VARCHAR" property="remark3" />
+    <result column="REMARK4" jdbcType="VARCHAR" property="remark4" />
+    <result column="REMARK5" jdbcType="VARCHAR" property="remark5" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, PID, EATING, BATH, MODIFICATION, CLOTHING, SHIT, URINATION, TOILET, BED_TRANSFER, 
+    WALKING, STAIRS, TOTAL_SCORE, GRADE, DELETED, CREATE_ID, CREATE_TIME, UPDATE_ID, 
+    UPDATE_TIME, REMARK1, REMARK2, REMARK3, REMARK4, REMARK5
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from PEOPLE_ASSESS_FIRST
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from PEOPLE_ASSESS_FIRST
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cgr.lesson.entity.PeopleAssessFirst">
+    insert into PEOPLE_ASSESS_FIRST (ID, PID, EATING, 
+      BATH, MODIFICATION, CLOTHING, 
+      SHIT, URINATION, TOILET, 
+      BED_TRANSFER, WALKING, STAIRS, 
+      TOTAL_SCORE, GRADE, DELETED, 
+      CREATE_ID, CREATE_TIME, UPDATE_ID, 
+      UPDATE_TIME, REMARK1, REMARK2, 
+      REMARK3, REMARK4, REMARK5
+      )
+    values (#{id,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, #{eating,jdbcType=DECIMAL}, 
+      #{bath,jdbcType=DECIMAL}, #{modification,jdbcType=DECIMAL}, #{clothing,jdbcType=DECIMAL}, 
+      #{shit,jdbcType=DECIMAL}, #{urination,jdbcType=DECIMAL}, #{toilet,jdbcType=DECIMAL}, 
+      #{bedTransfer,jdbcType=DECIMAL}, #{walking,jdbcType=DECIMAL}, #{stairs,jdbcType=DECIMAL}, 
+      #{totalScore,jdbcType=DECIMAL}, #{grade,jdbcType=DECIMAL}, #{deleted,jdbcType=DECIMAL}, 
+      #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, 
+      #{remark3,jdbcType=VARCHAR}, #{remark4,jdbcType=VARCHAR}, #{remark5,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cgr.lesson.entity.PeopleAssessFirst">
+    insert into PEOPLE_ASSESS_FIRST
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="pid != null">
+        PID,
+      </if>
+      <if test="eating != null">
+        EATING,
+      </if>
+      <if test="bath != null">
+        BATH,
+      </if>
+      <if test="modification != null">
+        MODIFICATION,
+      </if>
+      <if test="clothing != null">
+        CLOTHING,
+      </if>
+      <if test="shit != null">
+        SHIT,
+      </if>
+      <if test="urination != null">
+        URINATION,
+      </if>
+      <if test="toilet != null">
+        TOILET,
+      </if>
+      <if test="bedTransfer != null">
+        BED_TRANSFER,
+      </if>
+      <if test="walking != null">
+        WALKING,
+      </if>
+      <if test="stairs != null">
+        STAIRS,
+      </if>
+      <if test="totalScore != null">
+        TOTAL_SCORE,
+      </if>
+      <if test="grade != null">
+        GRADE,
+      </if>
+      <if test="deleted != null">
+        DELETED,
+      </if>
+      <if test="createId != null">
+        CREATE_ID,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateId != null">
+        UPDATE_ID,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="remark1 != null">
+        REMARK1,
+      </if>
+      <if test="remark2 != null">
+        REMARK2,
+      </if>
+      <if test="remark3 != null">
+        REMARK3,
+      </if>
+      <if test="remark4 != null">
+        REMARK4,
+      </if>
+      <if test="remark5 != null">
+        REMARK5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null">
+        #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="eating != null">
+        #{eating,jdbcType=DECIMAL},
+      </if>
+      <if test="bath != null">
+        #{bath,jdbcType=DECIMAL},
+      </if>
+      <if test="modification != null">
+        #{modification,jdbcType=DECIMAL},
+      </if>
+      <if test="clothing != null">
+        #{clothing,jdbcType=DECIMAL},
+      </if>
+      <if test="shit != null">
+        #{shit,jdbcType=DECIMAL},
+      </if>
+      <if test="urination != null">
+        #{urination,jdbcType=DECIMAL},
+      </if>
+      <if test="toilet != null">
+        #{toilet,jdbcType=DECIMAL},
+      </if>
+      <if test="bedTransfer != null">
+        #{bedTransfer,jdbcType=DECIMAL},
+      </if>
+      <if test="walking != null">
+        #{walking,jdbcType=DECIMAL},
+      </if>
+      <if test="stairs != null">
+        #{stairs,jdbcType=DECIMAL},
+      </if>
+      <if test="totalScore != null">
+        #{totalScore,jdbcType=DECIMAL},
+      </if>
+      <if test="grade != null">
+        #{grade,jdbcType=DECIMAL},
+      </if>
+      <if test="deleted != null">
+        #{deleted,jdbcType=DECIMAL},
+      </if>
+      <if test="createId != null">
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark1 != null">
+        #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null">
+        #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null">
+        #{remark3,jdbcType=VARCHAR},
+      </if>
+      <if test="remark4 != null">
+        #{remark4,jdbcType=VARCHAR},
+      </if>
+      <if test="remark5 != null">
+        #{remark5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.PeopleAssessFirst">
+    update PEOPLE_ASSESS_FIRST
+    <set>
+      <if test="pid != null">
+        PID = #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="eating != null">
+        EATING = #{eating,jdbcType=DECIMAL},
+      </if>
+      <if test="bath != null">
+        BATH = #{bath,jdbcType=DECIMAL},
+      </if>
+      <if test="modification != null">
+        MODIFICATION = #{modification,jdbcType=DECIMAL},
+      </if>
+      <if test="clothing != null">
+        CLOTHING = #{clothing,jdbcType=DECIMAL},
+      </if>
+      <if test="shit != null">
+        SHIT = #{shit,jdbcType=DECIMAL},
+      </if>
+      <if test="urination != null">
+        URINATION = #{urination,jdbcType=DECIMAL},
+      </if>
+      <if test="toilet != null">
+        TOILET = #{toilet,jdbcType=DECIMAL},
+      </if>
+      <if test="bedTransfer != null">
+        BED_TRANSFER = #{bedTransfer,jdbcType=DECIMAL},
+      </if>
+      <if test="walking != null">
+        WALKING = #{walking,jdbcType=DECIMAL},
+      </if>
+      <if test="stairs != null">
+        STAIRS = #{stairs,jdbcType=DECIMAL},
+      </if>
+      <if test="totalScore != null">
+        TOTAL_SCORE = #{totalScore,jdbcType=DECIMAL},
+      </if>
+      <if test="grade != null">
+        GRADE = #{grade,jdbcType=DECIMAL},
+      </if>
+      <if test="deleted != null">
+        DELETED = #{deleted,jdbcType=DECIMAL},
+      </if>
+      <if test="createId != null">
+        CREATE_ID = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark1 != null">
+        REMARK1 = #{remark1,jdbcType=VARCHAR},
+      </if>
+      <if test="remark2 != null">
+        REMARK2 = #{remark2,jdbcType=VARCHAR},
+      </if>
+      <if test="remark3 != null">
+        REMARK3 = #{remark3,jdbcType=VARCHAR},
+      </if>
+      <if test="remark4 != null">
+        REMARK4 = #{remark4,jdbcType=VARCHAR},
+      </if>
+      <if test="remark5 != null">
+        REMARK5 = #{remark5,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.PeopleAssessFirst">
+    update PEOPLE_ASSESS_FIRST
+    set PID = #{pid,jdbcType=VARCHAR},
+      EATING = #{eating,jdbcType=DECIMAL},
+      BATH = #{bath,jdbcType=DECIMAL},
+      MODIFICATION = #{modification,jdbcType=DECIMAL},
+      CLOTHING = #{clothing,jdbcType=DECIMAL},
+      SHIT = #{shit,jdbcType=DECIMAL},
+      URINATION = #{urination,jdbcType=DECIMAL},
+      TOILET = #{toilet,jdbcType=DECIMAL},
+      BED_TRANSFER = #{bedTransfer,jdbcType=DECIMAL},
+      WALKING = #{walking,jdbcType=DECIMAL},
+      STAIRS = #{stairs,jdbcType=DECIMAL},
+      TOTAL_SCORE = #{totalScore,jdbcType=DECIMAL},
+      GRADE = #{grade,jdbcType=DECIMAL},
+      DELETED = #{deleted,jdbcType=DECIMAL},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR},
+      REMARK4 = #{remark4,jdbcType=VARCHAR},
+      REMARK5 = #{remark5,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

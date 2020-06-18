@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.SysRolePermissionMapper">
+  <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.SysRolePermission">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="ROLE_ID" jdbcType="VARCHAR" property="roleId" />
+    <result column="PERMISSION_ID" jdbcType="VARCHAR" property="permissionId" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, ROLE_ID, PERMISSION_ID, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_ROLE_PERMISSION
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from SYS_ROLE_PERMISSION
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cgr.lesson.entity.SysRolePermission">
+    insert into SYS_ROLE_PERMISSION (ID, ROLE_ID, PERMISSION_ID, 
+      CREATE_TIME)
+    values (#{id,jdbcType=VARCHAR}, #{roleId,jdbcType=VARCHAR}, #{permissionId,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cgr.lesson.entity.SysRolePermission">
+    insert into SYS_ROLE_PERMISSION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="roleId != null">
+        ROLE_ID,
+      </if>
+      <if test="permissionId != null">
+        PERMISSION_ID,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=VARCHAR},
+      </if>
+      <if test="permissionId != null">
+        #{permissionId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.SysRolePermission">
+    update SYS_ROLE_PERMISSION
+    <set>
+      <if test="roleId != null">
+        ROLE_ID = #{roleId,jdbcType=VARCHAR},
+      </if>
+      <if test="permissionId != null">
+        PERMISSION_ID = #{permissionId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.SysRolePermission">
+    update SYS_ROLE_PERMISSION
+    set ROLE_ID = #{roleId,jdbcType=VARCHAR},
+      PERMISSION_ID = #{permissionId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <delete id="removeByRoleId">
+     DELETE FROM sys_role_permission
+     WHERE role_id=#{roleId}
+  </delete>
+
+<!--  批量插入角色拥有的菜单id-->
+  <insert id="batchRolePermission" parameterType="com.cgr.lesson.entity.SysRolePermission">
+    insert into sys_role_permission(
+    id,
+    role_id,
+    permission_id,
+    create_time
+    )
+    (
+    <foreach collection="list" item="item" separator="union all">
+      select
+      #{item.id},
+      #{item.roleId},
+      #{item.permissionId},
+      #{item.createTime}
+      from dual
+    </foreach>
+    )
+  </insert>
+
+<!--  通过菜单权限ID获取角色ID集合-->
+  <select id="getRoleIdsByPermissionId" resultType="java.lang.String">
+    select * from sys_role_permission where permission_id=#{permissionId}
+  </select>
+
+  <!--  删除菜单以及与之关联的数据-->
+  <delete id="removeByPermissionId">
+    delete from sys_role_permission
+    where permission_id=#{permissionId}
+  </delete>
+
+  <!--  //根据角色id获取该角色关联的菜单id集合-->
+  <select id="getPermissionIdsByRoleId" resultType="java.lang.String">
+      select permission_id from sys_role_permission
+      where role_id=#{roleId}
+  </select>
+
+  <!-- @Description:     根据角色查询权限-->
+  <select id="getPermissionIdsByRoles" resultType="java.lang.String">
+    SELECT permission_id
+    from sys_role_permission
+    where role_id in
+    <foreach item="item" collection="list" open="(" separator="," close=")">
+      #{item}
+    </foreach>
+  </select>
+
+
+
+</mapper>

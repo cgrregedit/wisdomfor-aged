@@ -70,3 +70,608 @@
 2020-06-19 17:28:13.862  INFO 3132 --- [restartedMain] com.cgr.lesson.WisdomforAgedApplication  : Started WisdomforAgedApplication in 17.354 seconds (JVM running for 22.546)
 2020-06-19 17:29:37.818  INFO 3132 --- [Thread-39] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2020-06-19 17:29:37.874  INFO 3132 --- [Thread-39] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-06-19 19:18:31.812  INFO 5544 --- [restartedMain] com.cgr.lesson.WisdomforAgedApplication  : Starting WisdomforAgedApplication on HNPEKGB0LUV7E66 with PID 5544 (G:\JavaPro\wisdomfor-aged\target\classes started by Administrator in G:\JavaPro\wisdomfor-aged)
+2020-06-19 19:18:31.822 DEBUG 5544 --- [restartedMain] com.cgr.lesson.WisdomforAgedApplication  : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2020-06-19 19:18:31.823  INFO 5544 --- [restartedMain] com.cgr.lesson.WisdomforAgedApplication  : No active profile set, falling back to default profiles: default
+2020-06-19 19:18:32.026  INFO 5544 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-19 19:18:32.028  INFO 5544 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-19 19:18:36.578  INFO 5544 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-19 19:18:36.582  INFO 5544 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-06-19 19:18:36.689  INFO 5544 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71ms. Found 0 repository interfaces.
+2020-06-19 19:18:37.319  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.cgr.lesson.config.ShiroConfig$$EnhancerBySpringCGLIB$$f30a1147] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:37.674  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.cgr.lesson.config.RedisConfig$$EnhancerBySpringCGLIB$$3dd89891] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:37.719  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:37.725  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$a83772fc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:37.917  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.091  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.126  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisTemplate' of type [org.springframework.data.redis.core.RedisTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.131  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisService' of type [com.cgr.lesson.service.RedisService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.132  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customHashedCredentialsMatcher' of type [com.cgr.lesson.shiro.CustomHashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.138  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisCacheManager' of type [com.cgr.lesson.shiro.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.190  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.199  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$c5f205e2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.204  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$acc9aa24] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.208  INFO 5544 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-06-19 19:18:38.309  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.314  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.362  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'statFilter' of type [com.alibaba.druid.filter.stat.StatFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:38.397  WARN 5544 --- [restartedMain] c.a.druid.pool.DruidAbstractDataSource   : oracle.jdbc.driver.OracleDriver is deprecated.Having use oracle.jdbc.OracleDriver.
+2020-06-19 19:18:39.099  INFO 5544 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-19 19:18:39.099  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.902  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.910  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.912  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysRoleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.915  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysRoleMapper' of type [com.sun.proxy.$Proxy69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.921  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysRolePermissionMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.923  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysRolePermissionMapper' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.923  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rolePermissionServiceImpl' of type [com.cgr.lesson.service.impl.RolePermissionServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.929  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysPermissionMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.931  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysPermissionMapper' of type [com.sun.proxy.$Proxy71] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.939  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserRoleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.942  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserRoleMapper' of type [com.sun.proxy.$Proxy72] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.944  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRoleServiceImpl' of type [com.cgr.lesson.service.impl.UserRoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.950  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenSettings' of type [com.cgr.lesson.utils.TokenSettings] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.951  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'permissionServiceImpl' of type [com.cgr.lesson.service.impl.PermissionServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.956  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleServiceImpl' of type [com.cgr.lesson.service.impl.RoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.958  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customRealm' of type [com.cgr.lesson.shiro.CustomRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:39.964  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:40.057  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:40.191  INFO 5544 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$931db4b2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:18:41.238  INFO 5544 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8501 (http)
+2020-06-19 19:18:41.280  INFO 5544 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-19 19:18:41.280  INFO 5544 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-06-19 19:18:41.291  INFO 5544 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-19 19:18:41.292  INFO 5544 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-19 19:18:41.292  INFO 5544 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-19 19:18:41.320  INFO 5544 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-19 19:18:41.565  INFO 5544 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-19 19:18:41.566  INFO 5544 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 9537 ms
+2020-06-19 19:18:43.677  INFO 5544 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-06-19 19:18:44.187  INFO 5544 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-19 19:18:44.352  INFO 5544 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-19 19:18:44.610  WARN 5544 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-06-19 19:18:45.643  INFO 5544 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-06-19 19:18:45.684  INFO 5544 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-06-19 19:18:45.790  INFO 5544 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-06-19 19:18:46.283  INFO 5544 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pageInfoUsingPOST_1
+2020-06-19 19:18:46.403  INFO 5544 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pageInfoUsingPOST_2
+2020-06-19 19:18:46.443  INFO 5544 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pageInfoUsingPOST_3
+2020-06-19 19:18:46.520  INFO 5544 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pageInfoUsingPOST_4
+2020-06-19 19:18:46.579  INFO 5544 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pageInfoUsingPOST_5
+2020-06-19 19:18:46.688  INFO 5544 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8501 (http) with context path ''
+2020-06-19 19:18:46.694  INFO 5544 --- [restartedMain] com.cgr.lesson.WisdomforAgedApplication  : Started WisdomforAgedApplication in 16.002 seconds (JVM running for 19.622)
+2020-06-19 19:19:12.160  INFO 5544 --- [http-nio-8501-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-19 19:19:12.161  INFO 5544 --- [http-nio-8501-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-19 19:19:12.193  INFO 5544 --- [http-nio-8501-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 32 ms
+2020-06-19 19:19:15.984  WARN 5544 --- [http-nio-8501-exec-1] i.s.m.p.AbstractSerializableParameter    : Illegal DefaultValue null for parameter type integer
+
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[na:1.8.0_91]
+	at java.lang.Long.parseLong(Long.java:601) ~[na:1.8.0_91]
+	at java.lang.Long.valueOf(Long.java:803) ~[na:1.8.0_91]
+	at io.swagger.models.parameters.AbstractSerializableParameter.getExample(AbstractSerializableParameter.java:412) ~[swagger-models-1.5.20.jar:1.5.20]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:688) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:719) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:155) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serializeContents(IndexedListSerializer.java:119) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:79) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:18) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:727) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:719) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:155) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:727) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:719) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:155) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeFields(MapSerializer.java:722) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:643) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:33) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:727) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:719) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:155) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:480) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:319) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ObjectMapper._configAndWriteValue(ObjectMapper.java:3905) [jackson-databind-2.9.9.jar:2.9.9]
+	at com.fasterxml.jackson.databind.ObjectMapper.writeValueAsString(ObjectMapper.java:3219) [jackson-databind-2.9.9.jar:2.9.9]
+	at springfox.documentation.spring.web.json.JsonSerializer.toJson(JsonSerializer.java:38) [springfox-spring-web-2.9.2.jar:null]
+	at springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(Swagger2Controller.java:105) [springfox-swagger2-2.9.2.jar:null]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123) [druid-1.1.10.jar:1.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+
+2020-06-19 19:19:51.751 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.SysUserMapper.getUserInfoByName  : ==>  Preparing: select ID, USERNAME, SALT, PASSWORD, PHONE, DEPT_ID, REAL_NAME, NICK_NAME, EMAIL, STATUS, SEX, DELETED, CREATE_ID, UPDATE_ID, CREATE_WHERE, CREATE_TIME, UPDATE_TIME from sys_user where deleted=1 and username=? 
+2020-06-19 19:19:52.017 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.SysUserMapper.getUserInfoByName  : ==> Parameters: admin(String)
+2020-06-19 19:19:52.066 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.SysUserMapper.getUserInfoByName  : <==      Total: 1
+2020-06-19 19:19:52.076 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.getRoleIdsByUserId             : ==>  Preparing: select role_id from sys_user_role where user_id=? 
+2020-06-19 19:19:52.077 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.getRoleIdsByUserId             : ==> Parameters: fcf34b56-a7a2-4719-9236-867495e74c31(String)
+2020-06-19 19:19:52.088 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.getRoleIdsByUserId             : <==      Total: 1
+2020-06-19 19:19:52.117 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.SysRoleMapper.getRoleInfoByIds   : ==>  Preparing: select name from sys_role where id in ( ? ) and deleted=1 
+2020-06-19 19:19:52.119 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.SysRoleMapper.getRoleInfoByIds   : ==> Parameters: 1dd0b67b-2d1e-4d83-91d1-e02c9619f57a(String)
+2020-06-19 19:19:52.126 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.SysRoleMapper.getRoleInfoByIds   : <==      Total: 1
+2020-06-19 19:19:52.127 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.getRoleIdsByUserId             : ==>  Preparing: select role_id from sys_user_role where user_id=? 
+2020-06-19 19:19:52.128 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.getRoleIdsByUserId             : ==> Parameters: fcf34b56-a7a2-4719-9236-867495e74c31(String)
+2020-06-19 19:19:52.129 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.getRoleIdsByUserId             : <==      Total: 1
+2020-06-19 19:19:52.131 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.getPermissionIdsByRoles        : ==>  Preparing: SELECT permission_id from sys_role_permission where role_id in ( ? ) 
+2020-06-19 19:19:52.132 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.getPermissionIdsByRoles        : ==> Parameters: 1dd0b67b-2d1e-4d83-91d1-e02c9619f57a(String)
+2020-06-19 19:19:52.150 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.getPermissionIdsByRoles        : <==      Total: 42
+2020-06-19 19:19:52.152 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.selectInfoByIds                : ==>  Preparing: select ID, CODE, NAME, PERMS, URL, METHOD, PID, ORDER_NUM, TYPE, STATUS, CREATE_TIME, UPDATE_TIME, DELETED from sys_permission where id in ( ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ? ) and deleted=1 order by order_num DESC 
+2020-06-19 19:19:52.161 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.selectInfoByIds                : ==> Parameters: 39313e6a-14ed-4224-a91e-ef6a10ba54cd(String), 41412d6d-d86a-4cfd-9aa7-d51f9ced0dfe(String), 47697e92-e199-4420-a2c2-09ec1b08cb9d(String), 4caeb861-354c-45f6-98b4-59f486beb511(String), 5695ed19-5620-4da4-8cb0-159f34ae6591(String), 65734896-90c5-4b48-b9e8-dee47a74a297(String), 7141c2e9-6d50-46b6-94e8-100466b7249f(String), 8180e320-e2bf-470c-bb42-80fb5bf9f5c3(String), 84b9b525-aa44-4b16-9900-adca26115a37(String), 8f393e44-b585-4875-866d-71f88fea9659(String), 90b3be91-5e9d-42f8-81fb-0c9ef3014faa(String), 94fe50a9-f5af-4f3c-84e4-18b3a84d7a58(String), 9ce621a0-ee2c-4cf6-b7bd-012a1a01ba63(String), b7348d63-c4d3-406d-9e46-543346674275(String), bb5ca869-0303-4fc0-b067-936cba7d1cc8(String), c095273c-7917-4503-8569-6a67a9979d56(String), c198d1cb-ad4d-4001-9375-9ec8ee04053d(String), ccef525e-3392-45f8-969f-d552b142dc0f(String), d41c2bc3-454c-4f62-84fe-97825d5cf8a7(String), d60faf3e-9a72-49d5-b02d-a67bfeff07fa(String), de8e2328-4313-477e-9644-3ca93799cc76(String), e136cc74-9817-4ef1-b181-8f1afd7e102c(String), f1ea1abb-3dde-4196-b054-2ae2fcfe7c23(String), f9f4d9f4-a2f5-430c-9f2d-6c8e650a8c39(String), 73a58e37-9401-4d9d-903b-e1fad17fd53a(String), a23a835b-8bec-4151-864b-8a687e1c9c13(String), 013095aa-0f4d-4c32-b30e-229a587e52ad(String), 03dc1cbf-ef44-4326-a7dc-10fe16d22dad(String), 0545d9d1-c82c-44c2-85e5-0b6ac4042515(String), 075224a7-1805-4f2f-a325-157effaf0004(String), 145cb90b-d205-40f6-8a2d-703f41ed1feb(String), 15bb6aff-2e3b-490a-a21f-0167ae0ebc0d(String), 2446fd0d-11ba-44aa-9128-531e38ec3b7a(String), 24b7b13c-f00f-4e6b-a221-fe2d780e4d4f(String), 26694831-fc81-4590-9095-af7e55b9819a(String), 27acf73b-2fcb-451b-bdc4-e11e5ab41e2a(String), 290c0240-0914-487c-b4e9-6635bf5ebfec(String), 2ae13993-9501-46d5-8473-fe45fee57f3b(String), 2eeaa020-74d5-4c4b-9849-2cf4bd68fed9(String), 2f9a3f67-6ef3-4eac-b9a1-c0e898718d0c(String), 346df872-8964-4455-8afd-ffa6308fb18a(String), 390ded0e-9f48-40a7-a841-791c203f22ae(String)
+2020-06-19 19:19:52.210 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.S.selectInfoByIds                : <==      Total: 39
+2020-06-19 19:19:52.339  INFO 5544 --- [http-nio-8501-exec-4] com.cgr.lesson.aop.aspect.SysLogAspect   : 请求com.cgr.lesson.controller.UserController.login耗时662毫秒
+2020-06-19 19:19:52.561  INFO 5544 --- [http-nio-8501-exec-4] com.cgr.lesson.aop.aspect.SysLogAspect   : Ip0:0:0:0:0:0:0:1，接口地址http://localhost:8501/api/user/login，请求方式POST，入参：[{"password":"123456","type":"1","username":"admin"}]
+2020-06-19 19:19:52.589 ERROR 5544 --- [http-nio-8501-exec-4] com.cgr.lesson.utils.JwtTokenUtil        : eror={}
+
+java.lang.NullPointerException: null
+	at com.cgr.lesson.utils.JwtTokenUtil.getUserId(JwtTokenUtil.java:154) ~[classes/:na]
+	at com.cgr.lesson.aop.aspect.SysLogAspect.saveSysLog(SysLogAspect.java:117) [classes/:na]
+	at com.cgr.lesson.aop.aspect.SysLogAspect.around(SysLogAspect.java:64) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at com.cgr.lesson.controller.UserController$$EnhancerBySpringCGLIB$$31473ab4.login(<generated>) [classes/:na]
+	at com.cgr.lesson.controller.UserController$$FastClassBySpringCGLIB$$64ada2f0.invoke(<generated>) [classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) [spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at com.cgr.lesson.controller.UserController$$EnhancerBySpringCGLIB$$45e838e8.login(<generated>) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123) [druid-1.1.10.jar:1.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at com.cgr.lesson.config.CrossOriginfilter.doFilter(CrossOriginfilter.java:31) [classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+
+2020-06-19 19:19:52.595 ERROR 5544 --- [http-nio-8501-exec-4] com.cgr.lesson.utils.JwtTokenUtil        : eror={}
+
+java.lang.NullPointerException: null
+	at com.cgr.lesson.utils.JwtTokenUtil.getUserName(JwtTokenUtil.java:175) ~[classes/:na]
+	at com.cgr.lesson.aop.aspect.SysLogAspect.saveSysLog(SysLogAspect.java:118) [classes/:na]
+	at com.cgr.lesson.aop.aspect.SysLogAspect.around(SysLogAspect.java:64) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at com.cgr.lesson.controller.UserController$$EnhancerBySpringCGLIB$$31473ab4.login(<generated>) [classes/:na]
+	at com.cgr.lesson.controller.UserController$$FastClassBySpringCGLIB$$64ada2f0.invoke(<generated>) [classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) [spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:684) [spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at com.cgr.lesson.controller.UserController$$EnhancerBySpringCGLIB$$45e838e8.login(<generated>) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123) [druid-1.1.10.jar:1.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at com.cgr.lesson.config.CrossOriginfilter.doFilter(CrossOriginfilter.java:31) [classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+
+2020-06-19 19:19:52.598  INFO 5544 --- [http-nio-8501-exec-4] com.cgr.lesson.aop.aspect.SysLogAspect   : SysLog [Hash = 2007361654, id=d4a6e3c5-d963-4f27-b1df-c36b2b2eb93e, userId=null, username=null, operation=用户模块-用户登录接口, time=662, method=com.cgr.lesson.controller.UserController.login(), params=[{"password":"123456","type":"1","username":"admin"}], ip=0:0:0:0:0:0:0:1, createTime=Fri Jun 19 19:19:52 CST 2020, serialVersionUID=1]
+2020-06-19 19:19:52.608 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.SysLogMapper.insertSelective     : ==>  Preparing: insert into SYS_LOG ( ID, OPERATION, TIME, METHOD, PARAMS, IP, CREATE_TIME ) values ( ?, ?, ?, ?, ?, ?, ? ) 
+2020-06-19 19:19:52.617 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.SysLogMapper.insertSelective     : ==> Parameters: d4a6e3c5-d963-4f27-b1df-c36b2b2eb93e(String), 用户模块-用户登录接口(String), 662(Integer), com.cgr.lesson.controller.UserController.login()(String), [{"password":"123456","type":"1","username":"admin"}](String), 0:0:0:0:0:0:0:1(String), 2020-06-19 19:19:52.598(Timestamp)
+2020-06-19 19:19:52.664 DEBUG 5544 --- [http-nio-8501-exec-4] c.c.l.m.SysLogMapper.insertSelective     : <==    Updates: 1
+2020-06-19 19:20:24.069  INFO 5544 --- [http-nio-8501-exec-8] c.c.l.shiro.CustomAccessControlerFilter  : POST
+2020-06-19 19:20:24.070  INFO 5544 --- [http-nio-8501-exec-8] c.c.l.shiro.CustomAccessControlerFilter  : http://localhost:8501/api/testpro
+2020-06-19 19:20:24.369  INFO 5544 --- [http-nio-8501-exec-8] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-06-19 19:20:24.372  INFO 5544 --- [http-nio-8501-exec-8] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-06-19 19:20:26.646 ERROR 5544 --- [http-nio-8501-exec-8] c.c.l.e.handler.RestExceptionHandler     : Exception,nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'porganid' in 'class com.cgr.lesson.vo.req.TestProReqVO',{}
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'porganid' in 'class com.cgr.lesson.vo.req.TestProReqVO'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy68.selectOne(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy113.getTestPro(Unknown Source) ~[na:na]
+	at com.cgr.lesson.service.impl.PeopleBaseInfoServiceImpl.getTestPro(PeopleBaseInfoServiceImpl.java:94) ~[classes/:na]
+	at com.cgr.lesson.controller.PeopleBaseInfoController.getTestPro(PeopleBaseInfoController.java:82) ~[classes/:na]
+	at com.cgr.lesson.controller.PeopleBaseInfoController$$FastClassBySpringCGLIB$$385816f3.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749) ~[spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at com.cgr.lesson.controller.PeopleBaseInfoController$$EnhancerBySpringCGLIB$$3de5bb1b.getTestPro(<generated>) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) [spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) [shiro-core-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) [shiro-web-1.4.1.jar:1.4.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123) [druid-1.1.10.jar:1.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at com.cgr.lesson.config.CrossOriginfilter.doFilter(CrossOriginfilter.java:31) [classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) [spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_91]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_91]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_91]
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'porganid' in 'class com.cgr.lesson.vo.req.TestProReqVO'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:419) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:164) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:162) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:219) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:84) ~[pagehelper-5.1.4.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy179.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_91]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 93 common frames omitted
+
+2020-06-19 19:20:26.649  WARN 5544 --- [http-nio-8501-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'porganid' in 'class com.cgr.lesson.vo.req.TestProReqVO']
+2020-06-19 19:20:44.281  INFO 5544 --- [Thread-38] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-19 19:20:44.308  INFO 5544 --- [Thread-38] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-06-19 19:22:56.110  INFO 10308 --- [restartedMain] com.cgr.lesson.WisdomforAgedApplication  : Starting WisdomforAgedApplication on HNPEKGB0LUV7E66 with PID 10308 (G:\JavaPro\wisdomfor-aged\target\classes started by Administrator in G:\JavaPro\wisdomfor-aged)
+2020-06-19 19:22:56.116 DEBUG 10308 --- [restartedMain] com.cgr.lesson.WisdomforAgedApplication  : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2020-06-19 19:22:56.117  INFO 10308 --- [restartedMain] com.cgr.lesson.WisdomforAgedApplication  : No active profile set, falling back to default profiles: default
+2020-06-19 19:22:56.261  INFO 10308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-19 19:22:56.262  INFO 10308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-19 19:22:58.688  INFO 10308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-19 19:22:58.691  INFO 10308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-06-19 19:22:58.783  INFO 10308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49ms. Found 0 repository interfaces.
+2020-06-19 19:22:59.366  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.cgr.lesson.config.ShiroConfig$$EnhancerBySpringCGLIB$$79f90a14] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:22:59.695  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.cgr.lesson.config.RedisConfig$$EnhancerBySpringCGLIB$$c4c7915e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:22:59.744  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:22:59.750  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$2f266bc9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:22:59.923  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.084  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.108  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisTemplate' of type [org.springframework.data.redis.core.RedisTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.111  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisService' of type [com.cgr.lesson.service.RedisService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.113  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customHashedCredentialsMatcher' of type [com.cgr.lesson.shiro.CustomHashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.118  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisCacheManager' of type [com.cgr.lesson.shiro.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.170  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.182  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$4ce0feaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.186  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure$$EnhancerBySpringCGLIB$$33b8a2f1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.190  INFO 10308 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-06-19 19:23:00.293  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.295  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration' of type [com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.490  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'statFilter' of type [com.alibaba.druid.filter.stat.StatFilter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:00.525  WARN 10308 --- [restartedMain] c.a.druid.pool.DruidAbstractDataSource   : oracle.jdbc.driver.OracleDriver is deprecated.Having use oracle.jdbc.OracleDriver.
+2020-06-19 19:23:01.126  INFO 10308 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-19 19:23:01.126  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.773  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.782  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.783  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysRoleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.785  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysRoleMapper' of type [com.sun.proxy.$Proxy69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.792  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysRolePermissionMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.793  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysRolePermissionMapper' of type [com.sun.proxy.$Proxy70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.794  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'rolePermissionServiceImpl' of type [com.cgr.lesson.service.impl.RolePermissionServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.802  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysPermissionMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.803  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysPermissionMapper' of type [com.sun.proxy.$Proxy71] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.811  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserRoleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.813  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sysUserRoleMapper' of type [com.sun.proxy.$Proxy72] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.814  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRoleServiceImpl' of type [com.cgr.lesson.service.impl.UserRoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.820  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'tokenSettings' of type [com.cgr.lesson.utils.TokenSettings] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.821  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'permissionServiceImpl' of type [com.cgr.lesson.service.impl.PermissionServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.824  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleServiceImpl' of type [com.cgr.lesson.service.impl.RoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.827  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'customRealm' of type [com.cgr.lesson.shiro.CustomRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.833  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:01.924  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:02.052  INFO 10308 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1a0cad7f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-19 19:23:03.062  INFO 10308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8501 (http)
+2020-06-19 19:23:03.110  INFO 10308 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-19 19:23:03.111  INFO 10308 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2020-06-19 19:23:03.124  INFO 10308 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-06-19 19:23:03.124  INFO 10308 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-06-19 19:23:03.125  INFO 10308 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-06-19 19:23:03.131  INFO 10308 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-06-19 19:23:03.371  INFO 10308 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-19 19:23:03.372  INFO 10308 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7109 ms
+2020-06-19 19:23:05.438  INFO 10308 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-06-19 19:23:05.931  INFO 10308 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-19 19:23:06.098  INFO 10308 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-19 19:23:06.318  WARN 10308 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-06-19 19:23:07.239  INFO 10308 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-06-19 19:23:07.280  INFO 10308 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-06-19 19:23:07.373  INFO 10308 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-06-19 19:23:07.850  INFO 10308 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pageInfoUsingPOST_1
+2020-06-19 19:23:07.961  INFO 10308 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pageInfoUsingPOST_2
+2020-06-19 19:23:07.994  INFO 10308 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pageInfoUsingPOST_3
+2020-06-19 19:23:08.071  INFO 10308 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pageInfoUsingPOST_4
+2020-06-19 19:23:08.119  INFO 10308 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: pageInfoUsingPOST_5
+2020-06-19 19:23:08.229  INFO 10308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8501 (http) with context path ''
+2020-06-19 19:23:08.236  INFO 10308 --- [restartedMain] com.cgr.lesson.WisdomforAgedApplication  : Started WisdomforAgedApplication in 13.114 seconds (JVM running for 17.025)
+2020-06-19 19:23:11.879  INFO 10308 --- [http-nio-8501-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-19 19:23:11.879  INFO 10308 --- [http-nio-8501-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-19 19:23:11.908  INFO 10308 --- [http-nio-8501-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
+2020-06-19 19:23:11.959  INFO 10308 --- [http-nio-8501-exec-2] c.c.l.shiro.CustomAccessControlerFilter  : POST
+2020-06-19 19:23:11.960  INFO 10308 --- [http-nio-8501-exec-2] c.c.l.shiro.CustomAccessControlerFilter  : http://localhost:8501/api/testpro
+2020-06-19 19:23:12.553  INFO 10308 --- [http-nio-8501-exec-2] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2020-06-19 19:23:12.559  INFO 10308 --- [http-nio-8501-exec-2] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2020-06-19 19:23:14.875 DEBUG 10308 --- [http-nio-8501-exec-2] c.c.l.m.PeopleBaseinfoMapper.getTestPro  : ==>  Preparing: {call p_people_baseinfo_insert( ?, ?, ?, ?, ? )} 
+2020-06-19 19:23:15.056 DEBUG 10308 --- [http-nio-8501-exec-2] c.c.l.m.PeopleBaseinfoMapper.getTestPro  : ==> Parameters: 110(String), 123456(String), 1(Integer)
+2020-06-19 19:24:30.674  INFO 10308 --- [Thread-33] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-19 19:24:30.710  INFO 10308 --- [Thread-33] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

@@ -9,6 +9,7 @@ import com.cgr.lesson.utils.JwtTokenUtil;
 import com.cgr.lesson.vo.req.PeopleBaseInfoReqVO;
 import com.cgr.lesson.vo.req.PeopleBaseInfoUpdateReqVO;
 import com.cgr.lesson.vo.req.PeopleInfoPageReqVO;
+import com.cgr.lesson.vo.req.TestProReqVO;
 import com.cgr.lesson.vo.resp.PageVO;
 import com.cgr.lesson.vo.resp.PeopleInfoRespVO;
 import io.swagger.annotations.Api;
@@ -68,5 +69,17 @@ public class PeopleBaseInfoController {
         DataResult<PeopleBaseInfo> result=DataResult.success();
         result.setData(peopleBaseInfoService.getPeopleBaseInfoById(id));
         return  result;
+    }
+
+    @PostMapping("/testpro")
+    @ApiOperation(value = "存储过程测试")
+    public DataResult<TestProReqVO> getTestPro(){
+        DataResult<TestProReqVO> result=DataResult.success();
+        TestProReqVO testProReqVO=new TestProReqVO();
+        testProReqVO.setOrganid("110");
+        testProReqVO.setOnlynumber("123456");
+        testProReqVO.setVisitnum(1);
+        result.setData(peopleBaseInfoService.getTestPro(testProReqVO));
+        return result;
     }
 }

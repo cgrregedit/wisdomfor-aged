@@ -4,6 +4,7 @@ import com.cgr.lesson.entity.PeopleBaseInfo;
 import com.cgr.lesson.vo.req.PeopleBaseInfoReqVO;
 import com.cgr.lesson.vo.req.PeopleBaseInfoUpdateReqVO;
 import com.cgr.lesson.vo.req.PeopleInfoPageReqVO;
+import com.cgr.lesson.vo.req.TestProReqVO;
 import com.cgr.lesson.vo.resp.PageVO;
 import com.cgr.lesson.vo.resp.PeopleInfoRespVO;
 
@@ -16,5 +17,7 @@ public interface PeopleBaseInfoService {
      PageVO<PeopleInfoRespVO> pageInfo(PeopleInfoPageReqVO vo);
      //根据id获取基本信息
     PeopleBaseInfo getPeopleBaseInfoById(String id);
+    //存储过程测试
+    TestProReqVO getTestPro(TestProReqVO vo);
 
 }

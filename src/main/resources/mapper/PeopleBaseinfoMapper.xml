@@ -425,82 +425,98 @@
 
     <select id="selectAll" parameterType="com.cgr.lesson.vo.req.PeopleInfoPageReqVO"
             resultType="com.cgr.lesson.vo.resp.PeopleInfoRespVO">
-     select a.id,a.name,a.people_id,case when a.sex=1 then '男'
-                                    when a.sex=2 then '女'
-                                    when a.sex=9 then '未说明的性别'
-                                    when a.sex=0 then '未知的性别'
-                                    else '未说明的性别' end as sex,
-       a.birthday,a.id_card,a.work_place,a.phone,a.contacts_name,a.contacts_phone,
-      d1.dictname as residence_name,a.nation,d2.dictname as blood_name,
-      d3.dictname as blood_rh_name,d4.dictname as education_name,
-      d5.dictname as profession_name,d6.dictname as  marital_status_name,
-      d7.dictname as pay_name,a.pay_text,d8.dictname as allergic_history_name,
-      d9.dictname as exposure_history_name,a.medical_card,
-      b.id as people_pasthistory_id,case when b.disease_history=1 then '无'
-                                   when b.disease_history=2 then '有'
-                                   else '无' end as disease_history_name,
-       case when b.operation_history=1 then '无'
-            when b.operation_history=2 then '有'
-            else '无' end as operation_history_name,
+        select a.id,a.name,a.people_id,case when a.sex=1 then '男'
+        when a.sex=2 then '女'
+        when a.sex=9 then '未说明的性别'
+        when a.sex=0 then '未知的性别'
+        else '未说明的性别' end as sex,
+        a.birthday,a.id_card,a.work_place,a.phone,a.contacts_name,a.contacts_phone,
+        d1.dictname as residence_name,a.nation,d2.dictname as blood_name,
+        d3.dictname as blood_rh_name,d4.dictname as education_name,
+        d5.dictname as profession_name,d6.dictname as marital_status_name,
+        d7.dictname as pay_name,a.pay_text,d8.dictname as allergic_history_name,
+        d9.dictname as exposure_history_name,a.medical_card,
+        b.id as people_pasthistory_id,case when b.disease_history=1 then '无'
+        when b.disease_history=2 then '有'
+        else '无' end as disease_history_name,
+        case when b.operation_history=1 then '无'
+        when b.operation_history=2 then '有'
+        else '无' end as operation_history_name,
         case when b.trauma_history=1 then '无'
-            when b.trauma_history=2 then '有'
-            else '无' end as trauma_history_name,
-       case when b.bunko_history=1 then '无'
-            when b.bunko_history=2 then '有'
-            else '无' end as bunko_history_name,
-       d10.dictname as father_disease_name,d11.dictname as monther_disease_name,
-       d12.dictname as brother_disease_name,d13.dictname as children_disease_name,
-       case when b.heredity_disease=1 then '无'
-            when b.heredity_disease=2 then '有'
-            else '无' end as heredity_disease_name,
-       d14.dictname as disability_name,b.disability_text,b.disability_num,
-       d15.dictname as disability_grade_name,
-       c.id as people_living_id,d16.dictname as kitchen_exhaust_name,
-       d17.dictname as fuel_type_name,
-       d18.dictname as water_name,d19.dictname as toilet_name,
-       d20.dictname as livestock_farm_name
-       from people_baseinfo a
-      left join sys_dict d1 on a.residence_type=d1.dictid and d1.typeid=2
-      left join sys_dict d2 on a.blood=d2.dictid and d2.typeid=1
-      left join sys_dict d3 on a.blood_rh=d3.dictid and d3.typeid=5
-      left join sys_dict d4 on a.education=d4.dictid and d4.typeid=4
-      left join sys_dict d5 on a.profession=d5.dictid and d5.typeid=3
-      left join sys_dict d6 on a.marital_status=d6.dictid and d6.typeid=6
-      left join sys_dict d7 on a.pay_type=d7.dictid and d7.typeid=7
-      left join sys_dict d8 on a.allergic_history=d8.dictid and d8.typeid=8
-      left join sys_dict d9 on a.exposure_history=d9.dictid and d9.typeid=9
-      left join people_pasthistory b on a.id=b.pid
-      left join sys_dict d10 on b.father_disease=d10.dictid and d10.typeid=10
-      left join sys_dict d11 on b.monther_disease=d11.dictid and d11.typeid=10
-      left join sys_dict d12 on b.brother_disease=d12.dictid and d12.typeid=10
-      left join sys_dict d13 on b.children_disease=d13.dictid and d13.typeid=10
-      left join sys_dict d14 on b.disability=d14.dictid and d14.typeid=11
-      left join sys_dict d15 on b.disability_grade=d15.dictid and d15.typeid=17
-      left join people_living c on a.id=c.pid
-      left join sys_dict d16 on c.kitchen_exhaust=d16.dictid and d16.typeid=12
-      left join sys_dict d17 on c.fuel_type=d17.dictid and d17.typeid=13
-      left join sys_dict d18 on c.water=d18.dictid and d18.typeid=14
-      left join sys_dict d19 on c.toilet=d19.dictid and d19.typeid=15
-      left join sys_dict d20 on c.livestock_farm=d20.dictid and d20.typeid=20
-      <where>
-          a.deleted=1
-          <if test="name!=null and name!=''">
-             and a.name like '%'||#{name}||'%'
-          </if>
+        when b.trauma_history=2 then '有'
+        else '无' end as trauma_history_name,
+        case when b.bunko_history=1 then '无'
+        when b.bunko_history=2 then '有'
+        else '无' end as bunko_history_name,
+        d10.dictname as father_disease_name,d11.dictname as monther_disease_name,
+        d12.dictname as brother_disease_name,d13.dictname as children_disease_name,
+        case when b.heredity_disease=1 then '无'
+        when b.heredity_disease=2 then '有'
+        else '无' end as heredity_disease_name,
+        d14.dictname as disability_name,b.disability_text,b.disability_num,
+        d15.dictname as disability_grade_name,
+        c.id as people_living_id,d16.dictname as kitchen_exhaust_name,
+        d17.dictname as fuel_type_name,
+        d18.dictname as water_name,d19.dictname as toilet_name,
+        d20.dictname as livestock_farm_name
+        from people_baseinfo a
+        left join sys_dict d1 on a.residence_type=d1.dictid and d1.typeid=2
+        left join sys_dict d2 on a.blood=d2.dictid and d2.typeid=1
+        left join sys_dict d3 on a.blood_rh=d3.dictid and d3.typeid=5
+        left join sys_dict d4 on a.education=d4.dictid and d4.typeid=4
+        left join sys_dict d5 on a.profession=d5.dictid and d5.typeid=3
+        left join sys_dict d6 on a.marital_status=d6.dictid and d6.typeid=6
+        left join sys_dict d7 on a.pay_type=d7.dictid and d7.typeid=7
+        left join sys_dict d8 on a.allergic_history=d8.dictid and d8.typeid=8
+        left join sys_dict d9 on a.exposure_history=d9.dictid and d9.typeid=9
+        left join people_pasthistory b on a.id=b.pid
+        left join sys_dict d10 on b.father_disease=d10.dictid and d10.typeid=10
+        left join sys_dict d11 on b.monther_disease=d11.dictid and d11.typeid=10
+        left join sys_dict d12 on b.brother_disease=d12.dictid and d12.typeid=10
+        left join sys_dict d13 on b.children_disease=d13.dictid and d13.typeid=10
+        left join sys_dict d14 on b.disability=d14.dictid and d14.typeid=11
+        left join sys_dict d15 on b.disability_grade=d15.dictid and d15.typeid=17
+        left join people_living c on a.id=c.pid
+        left join sys_dict d16 on c.kitchen_exhaust=d16.dictid and d16.typeid=12
+        left join sys_dict d17 on c.fuel_type=d17.dictid and d17.typeid=13
+        left join sys_dict d18 on c.water=d18.dictid and d18.typeid=14
+        left join sys_dict d19 on c.toilet=d19.dictid and d19.typeid=15
+        left join sys_dict d20 on c.livestock_farm=d20.dictid and d20.typeid=20
+        <where>
+            a.deleted=1
+            <if test="name!=null and name!=''">
+                and a.name like '%'||#{name}||'%'
+            </if>
 
-          <if test="idCard!=null and idCard!=''">
-             and a.id_card like '%'||#{idCard}||'%'
-          </if>
+            <if test="idCard!=null and idCard!=''">
+                and a.id_card like '%'||#{idCard}||'%'
+            </if>
 
-          <if test="startTime!=null and startTime!=''">
-             and a.create_time &gt;=to_date(#{startTime},'yyyy-MM-dd hh24:mi:ss')
-          </if>
+            <if test="startTime!=null and startTime!=''">
+                and a.create_time &gt;=to_date(#{startTime},'yyyy-MM-dd hh24:mi:ss')
+            </if>
 
-          <if test="endTime!=null and endTime!=''">
-              and a.create_time &lt;=to_date(#{endTime},'yyyy-MM-dd hh24:mi:ss')
-          </if>
+            <if test="endTime!=null and endTime!=''">
+                and a.create_time &lt;=to_date(#{endTime},'yyyy-MM-dd hh24:mi:ss')
+            </if>
 
-      </where>
+        </where>
 
-  </select>
+    </select>
+
+    <!--存储过程测试-->
+    <select id="getTestPro" parameterType="com.cgr.lesson.vo.req.TestProReqVO" useCache="false"
+            statementType="CALLABLE">
+      <![CDATA[
+
+                    {call p_people_baseinfo_insert(
+                    #{organid,mode=IN,jdbcType=VARCHAR},
+                    #{onlynumber,mode=IN,jdbcType=VARCHAR},
+                    #{visitnum,mode=IN,jdbcType=VARCHAR},
+                    #{retext,mode=OUT,jdbcType=VARCHAR},
+                    #{reint,mode=OUT,jdbcType=INTEGER}
+                    )}
+
+        ]]>
+    </select>
 </mapper>

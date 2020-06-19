@@ -12,6 +12,7 @@ import com.cgr.lesson.utils.PageUtil;
 import com.cgr.lesson.vo.req.PeopleBaseInfoReqVO;
 import com.cgr.lesson.vo.req.PeopleBaseInfoUpdateReqVO;
 import com.cgr.lesson.vo.req.PeopleInfoPageReqVO;
+import com.cgr.lesson.vo.req.TestProReqVO;
 import com.cgr.lesson.vo.resp.PageVO;
 import com.cgr.lesson.vo.resp.PeopleInfoRespVO;
 import com.github.pagehelper.PageHelper;
@@ -85,5 +86,11 @@ public class PeopleBaseInfoServiceImpl implements PeopleBaseInfoService {
     @Override
     public PeopleBaseInfo getPeopleBaseInfoById(String id) {
         return peopleBaseinfoMapper.selectByPrimaryKey(id);
+    }
+
+    //存储过程测试
+    @Override
+    public TestProReqVO getTestPro(TestProReqVO vo) {
+        return peopleBaseinfoMapper.getTestPro(vo);
     }
 }

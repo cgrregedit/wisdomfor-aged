@@ -12,6 +12,7 @@ import com.cgr.lesson.vo.req.PeoplePackageUpdateReqVO;
 import com.cgr.lesson.vo.resp.PageVO;
 import com.cgr.lesson.vo.resp.PeoplePackageResqVO;
 import com.github.pagehelper.PageHelper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,7 @@ import java.util.UUID;
  */
 
 @Service
+@Slf4j
 public class PeoplePackageServiceImpl implements PeoplePackageService {
     @Autowired
     private PeoplePackageMapper peoplePackageMapper;
@@ -63,7 +65,19 @@ public class PeoplePackageServiceImpl implements PeoplePackageService {
 
     @Override
     public PeoplePackage peoplePackageUpdate(PeoplePackageUpdateReqVO vo, String userId) {
-
-        return null;
+        //检查是否存在数据
+        PeoplePackage peoplePackage=peoplePackageMapper.selectByPrimaryKey(vo.getId());
+        if (null == peoplePackage) {
+            log.error("传入的id：{}不合法", vo.getId());
+            throw new BusinessException(BaseResponseCode.DATA_ERROR);
+        }
+        BeanUtils.copyProperties(vo,peoplePackage);
+        peoplePackage.setUpdateId(userId);
+        peoplePackage.setUpdateTime(new Date());
+        int i=peoplePackageMapper.updateByPrimaryKeySelective(peoplePackage);
+        if (i!=1){
+            throw new BusinessException(BaseResponseCode.OPERATION_ERROR);
+        }
+        return peoplePackage;
     }
 }

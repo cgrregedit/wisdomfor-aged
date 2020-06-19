@@ -8,6 +8,7 @@ import com.cgr.lesson.utils.DataResult;
 import com.cgr.lesson.utils.JwtTokenUtil;
 import com.cgr.lesson.vo.req.PeoplePackageAddReqVO;
 import com.cgr.lesson.vo.req.PeoplePackagePageReqVO;
+import com.cgr.lesson.vo.req.PeoplePackageUpdateReqVO;
 import com.cgr.lesson.vo.resp.PageVO;
 import com.cgr.lesson.vo.resp.PeoplePackageResqVO;
 import io.swagger.annotations.Api;
@@ -53,6 +54,14 @@ public class PeoplePackageController {
         String userID= JwtTokenUtil.getUserId(tokenStr);
         DataResult<PeoplePackage> result=DataResult.success();
         result.setData(peoplePackageService.peoplePackageAdd(vo,userID));
+        return result;
+    }
+
+    public DataResult<PeoplePackage> peoplePackageUpdate(@RequestBody @Valid PeoplePackageUpdateReqVO vo,HttpServletRequest request){
+        String tokenStr=request.getHeader(Constant.ACCESS_TOKEN);
+        String userId=JwtTokenUtil.getUserId(tokenStr);
+        DataResult<PeoplePackage> result=DataResult.success();
+        result.setData(peoplePackageService.peoplePackageUpdate(vo,userId));
         return result;
     }
 }

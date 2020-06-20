@@ -224,7 +224,16 @@
         <!--            <property name="useActualColumnNames" value="false"/>-->
         <!--        </table>-->
 
-        <table tableName="people_package" domainObjectName="PeoplePackage"
+<!--        <table tableName="people_package" domainObjectName="PeoplePackage"-->
+<!--               enableCountByExample="false"-->
+<!--               enableUpdateByExample="false"-->
+<!--               enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false"-->
+<!--               selectByExampleQueryId="true">-->
+<!--            <property name="useActualColumnNames" value="false"/>-->
+<!--        </table>-->
+
+        <table tableName="food_dishes" domainObjectName="FoodDishes"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"

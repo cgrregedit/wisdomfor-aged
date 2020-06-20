@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cgr.lesson.mapper.FoodDishesMapper">
-  <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.FoodDishes">
-    <id column="ID" jdbcType="VARCHAR" property="id" />
-    <result column="FOOD_NAME" jdbcType="VARCHAR" property="foodName" />
-    <result column="PRICE" jdbcType="DECIMAL" property="price" />
-    <result column="PHOTO" jdbcType="VARCHAR" property="photo" />
-    <result column="PIQUANCY" jdbcType="DECIMAL" property="piquancy" />
-    <result column="MOUTH_FEEL" jdbcType="DECIMAL" property="mouthFeel" />
-    <result column="TASTE" jdbcType="DECIMAL" property="taste" />
-    <result column="TABOO_POPULATION" jdbcType="VARCHAR" property="tabooPopulation" />
-    <result column="FOOD_NOTE" jdbcType="VARCHAR" property="foodNote" />
-    <result column="DELETED" jdbcType="DECIMAL" property="deleted" />
-    <result column="CREATE_ID" jdbcType="VARCHAR" property="createId" />
-    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId" />
-    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="REMARK1" jdbcType="VARCHAR" property="remark1" />
-    <result column="REMARK2" jdbcType="VARCHAR" property="remark2" />
-    <result column="REMARK3" jdbcType="VARCHAR" property="remark3" />
-    <result column="REMARK4" jdbcType="VARCHAR" property="remark4" />
-    <result column="REMARK5" jdbcType="VARCHAR" property="remark5" />
-  </resultMap>
-  <sql id="Base_Column_List">
+    <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.FoodDishes">
+        <id column="ID" jdbcType="VARCHAR" property="id"/>
+        <result column="FOOD_NAME" jdbcType="VARCHAR" property="foodName"/>
+        <result column="PRICE" jdbcType="DECIMAL" property="price"/>
+        <result column="PHOTO" jdbcType="VARCHAR" property="photo"/>
+        <result column="PIQUANCY" jdbcType="DECIMAL" property="piquancy"/>
+        <result column="MOUTH_FEEL" jdbcType="DECIMAL" property="mouthFeel"/>
+        <result column="TASTE" jdbcType="DECIMAL" property="taste"/>
+        <result column="TABOO_POPULATION" jdbcType="VARCHAR" property="tabooPopulation"/>
+        <result column="FOOD_NOTE" jdbcType="VARCHAR" property="foodNote"/>
+        <result column="DELETED" jdbcType="DECIMAL" property="deleted"/>
+        <result column="CREATE_ID" jdbcType="VARCHAR" property="createId"/>
+        <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId"/>
+        <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="REMARK1" jdbcType="VARCHAR" property="remark1"/>
+        <result column="REMARK2" jdbcType="VARCHAR" property="remark2"/>
+        <result column="REMARK3" jdbcType="VARCHAR" property="remark3"/>
+        <result column="REMARK4" jdbcType="VARCHAR" property="remark4"/>
+        <result column="REMARK5" jdbcType="VARCHAR" property="remark5"/>
+    </resultMap>
+    <sql id="Base_Column_List">
     ID, FOOD_NAME, PRICE, PHOTO, PIQUANCY, MOUTH_FEEL, TASTE, TABOO_POPULATION, FOOD_NOTE, 
     DELETED, CREATE_ID, CREATE_TIME, UPDATE_ID, UPDATE_TIME, REMARK1, REMARK2, REMARK3, 
     REMARK4, REMARK5
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from FOOD_DISHES
-    where ID = #{id,jdbcType=VARCHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from FOOD_DISHES
+        where ID = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from FOOD_DISHES
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.cgr.lesson.entity.FoodDishes">
+    <insert id="insert" parameterType="com.cgr.lesson.entity.FoodDishes">
     insert into FOOD_DISHES (ID, FOOD_NAME, PRICE, 
       PHOTO, PIQUANCY, MOUTH_FEEL, 
       TASTE, TABOO_POPULATION, FOOD_NOTE, 
@@ -53,188 +53,188 @@
       #{remark2,jdbcType=VARCHAR}, #{remark3,jdbcType=VARCHAR}, #{remark4,jdbcType=VARCHAR}, 
       #{remark5,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.cgr.lesson.entity.FoodDishes">
-    insert into FOOD_DISHES
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        ID,
-      </if>
-      <if test="foodName != null">
-        FOOD_NAME,
-      </if>
-      <if test="price != null">
-        PRICE,
-      </if>
-      <if test="photo != null">
-        PHOTO,
-      </if>
-      <if test="piquancy != null">
-        PIQUANCY,
-      </if>
-      <if test="mouthFeel != null">
-        MOUTH_FEEL,
-      </if>
-      <if test="taste != null">
-        TASTE,
-      </if>
-      <if test="tabooPopulation != null">
-        TABOO_POPULATION,
-      </if>
-      <if test="foodNote != null">
-        FOOD_NOTE,
-      </if>
-      <if test="deleted != null">
-        DELETED,
-      </if>
-      <if test="createId != null">
-        CREATE_ID,
-      </if>
-      <if test="createTime != null">
-        CREATE_TIME,
-      </if>
-      <if test="updateId != null">
-        UPDATE_ID,
-      </if>
-      <if test="updateTime != null">
-        UPDATE_TIME,
-      </if>
-      <if test="remark1 != null">
-        REMARK1,
-      </if>
-      <if test="remark2 != null">
-        REMARK2,
-      </if>
-      <if test="remark3 != null">
-        REMARK3,
-      </if>
-      <if test="remark4 != null">
-        REMARK4,
-      </if>
-      <if test="remark5 != null">
-        REMARK5,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=VARCHAR},
-      </if>
-      <if test="foodName != null">
-        #{foodName,jdbcType=VARCHAR},
-      </if>
-      <if test="price != null">
-        #{price,jdbcType=DECIMAL},
-      </if>
-      <if test="photo != null">
-        #{photo,jdbcType=VARCHAR},
-      </if>
-      <if test="piquancy != null">
-        #{piquancy,jdbcType=DECIMAL},
-      </if>
-      <if test="mouthFeel != null">
-        #{mouthFeel,jdbcType=DECIMAL},
-      </if>
-      <if test="taste != null">
-        #{taste,jdbcType=DECIMAL},
-      </if>
-      <if test="tabooPopulation != null">
-        #{tabooPopulation,jdbcType=VARCHAR},
-      </if>
-      <if test="foodNote != null">
-        #{foodNote,jdbcType=VARCHAR},
-      </if>
-      <if test="deleted != null">
-        #{deleted,jdbcType=DECIMAL},
-      </if>
-      <if test="createId != null">
-        #{createId,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateId != null">
-        #{updateId,jdbcType=VARCHAR},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="remark1 != null">
-        #{remark1,jdbcType=VARCHAR},
-      </if>
-      <if test="remark2 != null">
-        #{remark2,jdbcType=VARCHAR},
-      </if>
-      <if test="remark3 != null">
-        #{remark3,jdbcType=VARCHAR},
-      </if>
-      <if test="remark4 != null">
-        #{remark4,jdbcType=VARCHAR},
-      </if>
-      <if test="remark5 != null">
-        #{remark5,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.FoodDishes">
-    update FOOD_DISHES
-    <set>
-      <if test="foodName != null">
-        FOOD_NAME = #{foodName,jdbcType=VARCHAR},
-      </if>
-      <if test="price != null">
-        PRICE = #{price,jdbcType=DECIMAL},
-      </if>
-      <if test="photo != null">
-        PHOTO = #{photo,jdbcType=VARCHAR},
-      </if>
-      <if test="piquancy != null">
-        PIQUANCY = #{piquancy,jdbcType=DECIMAL},
-      </if>
-      <if test="mouthFeel != null">
-        MOUTH_FEEL = #{mouthFeel,jdbcType=DECIMAL},
-      </if>
-      <if test="taste != null">
-        TASTE = #{taste,jdbcType=DECIMAL},
-      </if>
-      <if test="tabooPopulation != null">
-        TABOO_POPULATION = #{tabooPopulation,jdbcType=VARCHAR},
-      </if>
-      <if test="foodNote != null">
-        FOOD_NOTE = #{foodNote,jdbcType=VARCHAR},
-      </if>
-      <if test="deleted != null">
-        DELETED = #{deleted,jdbcType=DECIMAL},
-      </if>
-      <if test="createId != null">
-        CREATE_ID = #{createId,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null">
-        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateId != null">
-        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
-      </if>
-      <if test="updateTime != null">
-        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="remark1 != null">
-        REMARK1 = #{remark1,jdbcType=VARCHAR},
-      </if>
-      <if test="remark2 != null">
-        REMARK2 = #{remark2,jdbcType=VARCHAR},
-      </if>
-      <if test="remark3 != null">
-        REMARK3 = #{remark3,jdbcType=VARCHAR},
-      </if>
-      <if test="remark4 != null">
-        REMARK4 = #{remark4,jdbcType=VARCHAR},
-      </if>
-      <if test="remark5 != null">
-        REMARK5 = #{remark5,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where ID = #{id,jdbcType=VARCHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.FoodDishes">
+    <insert id="insertSelective" parameterType="com.cgr.lesson.entity.FoodDishes">
+        insert into FOOD_DISHES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="foodName != null">
+                FOOD_NAME,
+            </if>
+            <if test="price != null">
+                PRICE,
+            </if>
+            <if test="photo != null">
+                PHOTO,
+            </if>
+            <if test="piquancy != null">
+                PIQUANCY,
+            </if>
+            <if test="mouthFeel != null">
+                MOUTH_FEEL,
+            </if>
+            <if test="taste != null">
+                TASTE,
+            </if>
+            <if test="tabooPopulation != null">
+                TABOO_POPULATION,
+            </if>
+            <if test="foodNote != null">
+                FOOD_NOTE,
+            </if>
+            <if test="deleted != null">
+                DELETED,
+            </if>
+            <if test="createId != null">
+                CREATE_ID,
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME,
+            </if>
+            <if test="updateId != null">
+                UPDATE_ID,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="remark1 != null">
+                REMARK1,
+            </if>
+            <if test="remark2 != null">
+                REMARK2,
+            </if>
+            <if test="remark3 != null">
+                REMARK3,
+            </if>
+            <if test="remark4 != null">
+                REMARK4,
+            </if>
+            <if test="remark5 != null">
+                REMARK5,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="foodName != null">
+                #{foodName,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="photo != null">
+                #{photo,jdbcType=VARCHAR},
+            </if>
+            <if test="piquancy != null">
+                #{piquancy,jdbcType=DECIMAL},
+            </if>
+            <if test="mouthFeel != null">
+                #{mouthFeel,jdbcType=DECIMAL},
+            </if>
+            <if test="taste != null">
+                #{taste,jdbcType=DECIMAL},
+            </if>
+            <if test="tabooPopulation != null">
+                #{tabooPopulation,jdbcType=VARCHAR},
+            </if>
+            <if test="foodNote != null">
+                #{foodNote,jdbcType=VARCHAR},
+            </if>
+            <if test="deleted != null">
+                #{deleted,jdbcType=DECIMAL},
+            </if>
+            <if test="createId != null">
+                #{createId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateId != null">
+                #{updateId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remark1 != null">
+                #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                #{remark5,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.FoodDishes">
+        update FOOD_DISHES
+        <set>
+            <if test="foodName != null">
+                FOOD_NAME = #{foodName,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                PRICE = #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="photo != null">
+                PHOTO = #{photo,jdbcType=VARCHAR},
+            </if>
+            <if test="piquancy != null">
+                PIQUANCY = #{piquancy,jdbcType=DECIMAL},
+            </if>
+            <if test="mouthFeel != null">
+                MOUTH_FEEL = #{mouthFeel,jdbcType=DECIMAL},
+            </if>
+            <if test="taste != null">
+                TASTE = #{taste,jdbcType=DECIMAL},
+            </if>
+            <if test="tabooPopulation != null">
+                TABOO_POPULATION = #{tabooPopulation,jdbcType=VARCHAR},
+            </if>
+            <if test="foodNote != null">
+                FOOD_NOTE = #{foodNote,jdbcType=VARCHAR},
+            </if>
+            <if test="deleted != null">
+                DELETED = #{deleted,jdbcType=DECIMAL},
+            </if>
+            <if test="createId != null">
+                CREATE_ID = #{createId,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateId != null">
+                UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="remark1 != null">
+                REMARK1 = #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                REMARK2 = #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                REMARK3 = #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                REMARK4 = #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                REMARK5 = #{remark5,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.FoodDishes">
     update FOOD_DISHES
     set FOOD_NAME = #{foodName,jdbcType=VARCHAR},
       PRICE = #{price,jdbcType=DECIMAL},
@@ -256,4 +256,37 @@
       REMARK5 = #{remark5,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
+
+    <!--分页查询菜品信息-->
+  <select id="selectAll" parameterType="com.cgr.lesson.vo.req.FoodDishesPageReqVO" resultType="com.cgr.lesson.vo.resp.FoodDishesRespVO">
+    select  a.id,
+    a.food_name as foodName,
+    a.price,
+    a.photo,
+    a.piquancy,
+    a.mouth_feel as mouthFeel,
+    a.taste,
+    a.taboo_population as tabooPopulation,
+    a.food_note as foodNote,
+    a.deleted,
+    a.create_id as createId,
+    a.create_time as createTime,
+    a.update_id as updateId,
+    a.update_time as updateTime,
+    a.remark1,
+    a.remark2,
+    a.remark3,
+    a.remark4,
+    a.remark5,b.dictname as piquancyName,c.dictname as mouthFeelName,
+    d.dictname as tasteName,f_taboo_population(a.taboo_population) as tabooPopulationName from food_dishes a
+    left join sys_dict b on a.piquancy=b.dictid and b.typeid=18
+    left join sys_dict c on a.mouth_feel=c.dictid and c.typeid=19
+    left join sys_dict d on a.taste=d.dictid and d.typeid=20
+    <where>
+      a.deleted=1
+      <if test="foodName!=null and foodName!=''">
+        and food_name like '%'||#{foodName}||'%'
+      </if>
+    </where>
+  </select>
 </mapper>

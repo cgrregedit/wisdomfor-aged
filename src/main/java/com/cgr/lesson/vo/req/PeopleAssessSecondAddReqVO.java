@@ -25,6 +25,6 @@ public class PeopleAssessSecondAddReqVO {
     @ApiModelProperty(value = "攻击行为")
     private Integer attacks;
 
-    @ApiModelProperty(value = "精神状态")
+    @ApiModelProperty(value = "抑郁状态")
     private Integer symptoms;
 }

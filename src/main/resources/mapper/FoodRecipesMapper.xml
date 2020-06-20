@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cgr.lesson.mapper.FoodRecipesMapper">
+    <resultMap id="BaseResultMap" type="com.cgr.lesson.entity.FoodRecipes">
+        <id column="ID" jdbcType="VARCHAR" property="id"/>
+        <result column="WEEK" jdbcType="VARCHAR" property="week"/>
+        <result column="FOOD_ID" jdbcType="VARCHAR" property="foodId"/>
+        <result column="REMARK1" jdbcType="VARCHAR" property="remark1"/>
+        <result column="REMARK2" jdbcType="VARCHAR" property="remark2"/>
+        <result column="REMARK3" jdbcType="VARCHAR" property="remark3"/>
+        <result column="REMARK4" jdbcType="VARCHAR" property="remark4"/>
+        <result column="REMARK5" jdbcType="VARCHAR" property="remark5"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    ID, WEEK, FOOD_ID, REMARK1, REMARK2, REMARK3, REMARK4, REMARK5
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from FOOD_RECIPES
+        where ID = #{id,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from FOOD_RECIPES
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.cgr.lesson.entity.FoodRecipes">
+    insert into FOOD_RECIPES (ID, WEEK, FOOD_ID, 
+      REMARK1, REMARK2, REMARK3, 
+      REMARK4, REMARK5)
+    values (#{id,jdbcType=VARCHAR}, #{week,jdbcType=VARCHAR}, #{foodId,jdbcType=VARCHAR}, 
+      #{remark1,jdbcType=VARCHAR}, #{remark2,jdbcType=VARCHAR}, #{remark3,jdbcType=VARCHAR}, 
+      #{remark4,jdbcType=VARCHAR}, #{remark5,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.cgr.lesson.entity.FoodRecipes">
+        insert into FOOD_RECIPES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="week != null">
+                WEEK,
+            </if>
+            <if test="foodId != null">
+                FOOD_ID,
+            </if>
+            <if test="remark1 != null">
+                REMARK1,
+            </if>
+            <if test="remark2 != null">
+                REMARK2,
+            </if>
+            <if test="remark3 != null">
+                REMARK3,
+            </if>
+            <if test="remark4 != null">
+                REMARK4,
+            </if>
+            <if test="remark5 != null">
+                REMARK5,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="week != null">
+                #{week,jdbcType=VARCHAR},
+            </if>
+            <if test="foodId != null">
+                #{foodId,jdbcType=VARCHAR},
+            </if>
+            <if test="remark1 != null">
+                #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                #{remark5,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.cgr.lesson.entity.FoodRecipes">
+        update FOOD_RECIPES
+        <set>
+            <if test="week != null">
+                WEEK = #{week,jdbcType=VARCHAR},
+            </if>
+            <if test="foodId != null">
+                FOOD_ID = #{foodId,jdbcType=VARCHAR},
+            </if>
+            <if test="remark1 != null">
+                REMARK1 = #{remark1,jdbcType=VARCHAR},
+            </if>
+            <if test="remark2 != null">
+                REMARK2 = #{remark2,jdbcType=VARCHAR},
+            </if>
+            <if test="remark3 != null">
+                REMARK3 = #{remark3,jdbcType=VARCHAR},
+            </if>
+            <if test="remark4 != null">
+                REMARK4 = #{remark4,jdbcType=VARCHAR},
+            </if>
+            <if test="remark5 != null">
+                REMARK5 = #{remark5,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.cgr.lesson.entity.FoodRecipes">
+    update FOOD_RECIPES
+    set WEEK = #{week,jdbcType=VARCHAR},
+      FOOD_ID = #{foodId,jdbcType=VARCHAR},
+      REMARK1 = #{remark1,jdbcType=VARCHAR},
+      REMARK2 = #{remark2,jdbcType=VARCHAR},
+      REMARK3 = #{remark3,jdbcType=VARCHAR},
+      REMARK4 = #{remark4,jdbcType=VARCHAR},
+      REMARK5 = #{remark5,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+    <!--批量插入-->
+    <insert id="BatchInsert" parameterType="com.cgr.lesson.entity.FoodRecipes">
+        insert into food_recipes(
+        id,week,food_id
+        )
+        (
+        <foreach collection="list" item="item" separator="union all">
+            select
+            #{item.id},
+            #{item.week},
+            #{item.foodId}
+            from dual
+        </foreach>
+        )
+    </insert>
+
+    <!--根据星期几删除菜谱-->
+    <delete id="deleteByWeek">
+     delete from food_recipes where week=#{week}
+  </delete>
+
+    <!--根据星期几查询菜谱-->
+    <select id="selectByweek" resultType="com.cgr.lesson.vo.resp.FoodRecipesRespVO">
+    select f.id,f.week,f.food_id as foodId,
+    a.food_name as foodName,a.price,a.photo,
+    b.dictname as piquancyName,c.dictname as mouthFeelName,
+    d.dictname as tasteName,f_taboo_population(a.taboo_population) as tabooPopulationName
+     from food_recipes f
+    inner join food_dishes a on f.food_id=a.id
+    left join sys_dict b on a.piquancy=b.dictid and b.typeid=18
+    left join sys_dict c on a.mouth_feel=c.dictid and c.typeid=19
+    left join sys_dict d on a.taste=d.dictid and d.typeid=20
+    where f.week=#{week}
+    </select>
+</mapper>
